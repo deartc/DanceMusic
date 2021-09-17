@@ -1,7 +1,7 @@
-# DanceMusicProject Description
-This is a Dance Music Database. The Dance Muisc Database holds information about music directory. 
+# DanceMusicProject
+This is a Dance Music Database. The Dance Muisc Database holds information about a music directory. 
 
-This project indludes SQL query includes one or more  JOIN or JOINs  necessary to the query.
+This project indludes  includes one or more  JOIN or JOINs  necessary to the query.
 
 
 I will include slides that have an appropriate title and the visualization descriptionsI satisfied the following components:
