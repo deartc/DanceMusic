@@ -1,5 +1,5 @@
 # DanceMusicProject
-This is a  project named DanceMusic, The Dance Muisc Database holds information about a music directory.  I am using Windows.   To access the relevant information  do the following:
+This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization to my music collection.   I used Window and SQL Express.   To run my project your must do the following.  
 
 
 I satsified the requirement by doing the following:
