@@ -12,7 +12,7 @@ Two of the tables should have a one-to-many relationship.
 The following data types should be present somewhere in the table definitions: DATETIME, INT, VARCHAR
 Each table should be related to one or more of the other tables via a primary key/foreign key relationship.
 
-Load data into the database schema
+Loaded data into the database schema
 Created DML (Data Manipulation Language) to load the tables with sample data.
 Populated these tables with data by manually inserting data, or using some sort of import tool. INCLUDE YOUR INSERT SCRIPT. If you need help generating an insert script for a table that has a lot of data in it, please let a mentor know.
 
