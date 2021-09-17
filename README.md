@@ -50,8 +50,6 @@ Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of
 Design a NONCLUSTERED INDEX with TWO KEY COLUMNS that improves the performance of one of the above queries.
 Design a NONCLUSTERED INDEX with AT LEAST ONE KEY COLUMN and AT LEAST ONE INCLUDED COLUMN that improves the performance of one of the above queries.
 
-I will include slides that have an appropriate title and the visualization descriptionsI satisfied the following components:
-
 
 Correct use of Git/Github and commits: I followed the correct steps in the project guidelines to create and name the github repository that would reflect a distinct repository. I then used the proper guidelines to initialize the project and add files using git bash and the command line. I then far exceeded the minimum number of commits needed to pass.
 
