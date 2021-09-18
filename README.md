@@ -2,7 +2,7 @@
 This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization to my music collection.   I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
 
 
-I satsified the requirement by doing the following:
+I satsified the requirements by doing the following:
 
 Created a relational database schema with a minimum of 3 tables.
 Created DDL (Data Definition Language) for tables and views.
@@ -14,12 +14,12 @@ Each table is related to one or more of the other tables via a primary key/forei
 
 Loaded data into the database schema
 Created DML (Data Manipulation Language) to load the tables with sample data.
-Populated these tables with data by manually inserting data, or using some sort of import tool. INCLUDE YOUR INSERT SCRIPT. 
+Populated these tables with data by manually inserting data, or using some sort of import tool.  I have included imput script. 
 
 Created and called at least 4 stored procedures.
 Created stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
 
-Chose at least 1 item from each group on the Features List below and implemented them in your stored procedures or DDL script
+Chose at least 1 item from each group on the Features List below and implemented them in your stored procedures or DDL script:
 
 .
  Group 1  Used 
