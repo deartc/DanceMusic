@@ -22,7 +22,7 @@ Created stored procedures to expose CRUD (Create, Read, Update, and Delete) func
 Chose at least 1 item from each group on the Features List below and implemented them in your stored procedures or DDL script
 
 .
-FEATURE LIST: Group 1  Used 
+ Group 1  Used 
 Using the above tables...
 Group 1: Reading Data from a Database
 
