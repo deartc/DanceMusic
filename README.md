@@ -1,16 +1,16 @@
 # DanceMusicProject
-This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization to my music collection.   I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
+This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection.   I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
 
 
 I satsified the requirements by doing the following:
 
 Created a relational database schema with a minimum of 3 tables.
 
-Created DDL (Data Definition Language) for tables and views.
-
-least 2 of the tables  contain 4 or more columns.
+Created DDL (Data Definition Language) for tables and views. Aleast 2 of the tables  contain 4 or more columns.
 
 Two of the tables  have a many-to-many relationship.
+
+
 Two of the tables  have a one-to-many relationship.
 
 
@@ -18,6 +18,8 @@ The following data types are present somewhere in the table definitions: DATETIM
 
 
 Each table is related to one or more of the other tables via a primary key/foreign key relationship.
+
+Tc complete the requirements I did the following:
 
 Loaded data into the database schema
 
@@ -74,11 +76,6 @@ Write a DML statement that UPDATEs a set of rows with a WHERE clause. The values
 UPDATE album
 SET store_country = 'United States'
 WHERE store_country= 'Great Britain';
-
-
-
-
-
 
 
 I did not use these group 2 features:
