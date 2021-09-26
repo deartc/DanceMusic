@@ -37,14 +37,15 @@ Created and called at least 4 stored procedures.
 Created stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
 
 
-Chose at least 1 item from each group on the Features List below and implemented them in your stored procedures or DDL script:
+Chose at least 1 item from each group on the Features List below and implemented them in my stored procedures or DDL script:
 
-.
- Group 1  Used 
-Using the above tables...
-Group 1: Reading Data from a Database
 
+Group 1 Used: Reading Data from a Database
 Write a  SELECT query that utilizes a JOIN.
+
+
+
+Group 1 1 not used:
 Write a  SELECT query that utilizes a JOIN with 3 or more tables.
 Write a  SELECT query that utilizes a LEFT JOIN.
 Write a  SELECT query that utilizes a variable in the WHERE clause.
@@ -54,10 +55,6 @@ Write a SELECT query that utilizes a CALCULATED FIELD.
 Write a SELECT query that utilizes a SUBQUERY.
 Write a SELECT query that utilizes a JOIN, at least 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC) AND A GROUP BY clause with an aggregate function.
 Write a SELECT query that utilizes a JOIN with 3 or more tables, at 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC), a GROUP BY clause with an aggregate function, and a HAVING clause.
-
-
-
-Group1 1 not used:
 Write a SELECT query that uses a WHERE clause.
 Write a  SELECT query that uses an OR and an AND operator.
 Write a  SELECT query that filters NULL rows using IS NOT NULL.
