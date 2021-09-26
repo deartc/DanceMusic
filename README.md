@@ -45,7 +45,7 @@ Write a  SELECT query that utilizes a JOIN.
 
 
 
-Group 1 1 not used:
+Group 1  not used:
 Write a  SELECT query that utilizes a JOIN with 3 or more tables.
 Write a  SELECT query that utilizes a LEFT JOIN.
 Write a  SELECT query that utilizes a variable in the WHERE clause.
