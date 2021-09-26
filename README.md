@@ -19,6 +19,7 @@ Populated these tables with data by manually inserting data, or using some sort 
 Created and called at least 4 stored procedures.
 Created stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
 
+
 Chose at least 1 item from each group on the Features List below and implemented them in your stored procedures or DDL script:
 
 .
@@ -50,9 +51,14 @@ Write a  SELECT query that filters NULL rows using IS NOT NULL.
 
 
 
-Group 2: Updating / Deleting Data from a Database
+Group 2: Updating / Deleting Data from a Database  i use the following one to satisfy requiremnts:
 Write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
-Write a DML statement that DELETEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
+
+
+I did not use these group 2 features:
+
+
+Write a a DML statement that DELETEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
 Write a DML statement that DELETEs rows from a table that another table references. This script will have to also DELETE any records that reference these rows. Both of the DELETE statements need to be wrapped in a single TRANSACTION.
 
 
@@ -61,7 +67,11 @@ Write a DML statement that DELETEs rows from a table that another table referenc
 
 
 Group 3: Optimizing a Database
-Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+
+I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+
+
+I did not include the folowing third features:
 Design a NONCLUSTERED INDEX with TWO KEY COLUMNS that improves the performance of one of the above queries.
 Design a NONCLUSTERED INDEX with AT LEAST ONE KEY COLUMN and AT LEAST ONE INCLUDED COLUMN that improves the performance of one of the above queries.
 
