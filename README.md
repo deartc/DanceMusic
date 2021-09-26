@@ -5,18 +5,33 @@ This is a  project named DanceMusic.  I teach dance exercise classes and  I woul
 I satsified the requirements by doing the following:
 
 Created a relational database schema with a minimum of 3 tables.
+
 Created DDL (Data Definition Language) for tables and views.
-At least 2 of the tables  contain 4 or more columns.
+
+least 2 of the tables  contain 4 or more columns.
+
 Two of the tables  have a many-to-many relationship.
 Two of the tables  have a one-to-many relationship.
+
+
 The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR
+
+
 Each table is related to one or more of the other tables via a primary key/foreign key relationship.
 
 Loaded data into the database schema
+
+
 Created DML (Data Manipulation Language) to load the tables with sample data.
+
+
 Populated these tables with data by manually inserting data, or using some sort of import tool.  I have included imput script. 
 
+
 Created and called at least 4 stored procedures.
+
+
+
 Created stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
 
 
@@ -52,12 +67,21 @@ Write a  SELECT query that filters NULL rows using IS NOT NULL.
 
 
 Group 2: Updating / Deleting Data from a Database  i use the following one to satisfy requiremnts:
+
 Write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
 
 
+UPDATE album
+SET store_country = 'United States'
+WHERE store_country= 'Great Britain';
+
+
+
+
+
+
+
 I did not use these group 2 features:
-
-
 Write a a DML statement that DELETEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
 Write a DML statement that DELETEs rows from a table that another table references. This script will have to also DELETE any records that reference these rows. Both of the DELETE statements need to be wrapped in a single TRANSACTION.
 
@@ -69,6 +93,12 @@ Write a DML statement that DELETEs rows from a table that another table referenc
 Group 3: Optimizing a Database
 
 I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+
+UPDATE music AS m
+SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) 
+WHERE albumID IS NULL
+  AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ; 
+
 
 
 I did not include the folowing third features:
