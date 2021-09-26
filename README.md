@@ -19,7 +19,7 @@ The following data types are present somewhere in the table definitions: DATETIM
 
 Each table is related to one or more of the other tables via a primary key/foreign key relationship.
 
-Tc complete the requirements I did the following:
+To complete the requirements I did the following:
 
 Loaded data into the database schema
 
