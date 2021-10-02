@@ -52,6 +52,20 @@ INSERT INTO Album VALUES(6,10,'Greatest Hits',2004);
 INSERT INTO Album VALUES(7,11,'All-Time Greatest Hits',2001);
 INSERT INTO Album VALUES(8,12,'Greatest Hits',2006);
 
+CREATE TABLE Albums (
+  AlbumId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+  AlbumName nvarchar(255) NOT NULL,
+  TimeDate date NOT NULL,
+  ArtistId int NOT NULL,
+  GenreId int NOT NULL
+  CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistId)     
+    REFERENCES dbo.Artists (ArtistId)     
+    ON DELETE NO ACTION    
+    ON UPDATE NO ACTION    
+);
+
+
+
 
 
 
