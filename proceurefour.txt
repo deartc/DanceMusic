@@ -12,6 +12,19 @@ INSERT INTO ARTIST (SongID, SongName, AlbumID, AlbumName, BandID, BandName, Lyri
  SongID, SongName, AlbumID, AlbumName, BandID, BandName, Lyrical_Themes, GuestArtists);  
 END
 
+
+GO
+
+EXECUTE add_album
+GO
+
+  
+  END;
+
+
+
+
+
 create procedure GetSong (Keyword CHAR (100))
   BEGIN
   select SongName, AlbumName, BandName, Lyrical_Themes, GuestArtists
@@ -20,7 +33,16 @@ create procedure GetSong (Keyword CHAR (100))
 or  AlbumName like concat("%",Keyword,"%")
 or  SongName like concat("%",Keyword,"%");
   
+  END
+
+GO
+
+EXECUTE GetSong
+GO
+
+  
   END;
+
 
 
 
@@ -33,5 +55,14 @@ create procedure GetBandMember(Keyword CHAR (100))
   where First_Name like concat("%",Keyword,"%")
   or Last_Name like concat("%",Keyword,"%")
 ;
+
+END
+
+GO
+
+EXECUTE GetBandMember
+GO
+
   
   END;
+  
