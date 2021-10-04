@@ -1,0 +1,30 @@
+SELECT artist_id
+FROM artist
+WHERE artist_name =  Abba'
+
+SELECT album_id
+FROM album
+WHERE album_name =  'Joy'
+
+SELECT COUNT(*)
+FROM track
+WHERE artist_id=1 AND album_id =1 
+
+Possible Solution Using One SQL Statement:
+-------------------------------------------
+SELECT COUNT( * ) 
+FROM track
+INNER JOIN artist ON artist.artist_id = track.artist_id
+INNER JOIN album ON album.album_id = track.album_id
+WHERE artist.artist_name =  'Abba'
+AND album.album_name =  'Joy'
+
+2.Using a join, list the albums by Abba.
+
+Possible Solution:
+-----------------
+
+SELECT album_name
+FROM album
+INNER JOIN artist ON album.artist_id=artist.artist_id
+WHERE artist_name='Abba'
