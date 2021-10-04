@@ -46,21 +46,7 @@ GO
 
 
 
-create procedure GetBandMember(Keyword CHAR (100))
-  BEGIN
-  select First_Name, Last_Name, Stage_Name, Role, ii.BandName
-  from INDIVIDUAL_ARTIST i
-  join BAND ii
-  on i.BandID = ii.BandID
-  where First_Name like concat("%",Keyword,"%")
-  or Last_Name like concat("%",Keyword,"%")
-;
 
-END
-
-GO
-
-EXECUTE GetBandMember
 GO
 
   
