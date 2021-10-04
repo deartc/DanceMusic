@@ -4,3 +4,5 @@ select
 from
     recordlabel as r join artist as a
       on r.labelid = a.labelid
+      
+     
