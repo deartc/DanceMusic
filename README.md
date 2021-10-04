@@ -1,5 +1,5 @@
 # DanceMusicProject
-This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences and fellow instuctors' contacts.  I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
+This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences and contact information. I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
 
 
 I satsified the requirements by doing the following:
