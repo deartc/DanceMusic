@@ -12,7 +12,7 @@ CREATE TABLE Genres (
 CREATE TABLE Albums (
   AlbumId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   AlbumName nvarchar(255) NOT NULL,
-  TimeDate date NOT NULL,
+   DATETIME ReleaseDate NOT NULL,
   ArtistId int NOT NULL,
   GenreId int NOT NULL
   CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistId)     
