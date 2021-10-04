@@ -25,30 +25,6 @@ GO
 
 
 
-create procedure GetSong (Keyword CHAR (100))
-  BEGIN
-  select SongName, AlbumName, BandName, Lyrical_Themes, GuestArtists
-  from SONGS
-  where BandName like concat("%",Keyword,"%")
-or  AlbumName like concat("%",Keyword,"%")
-or  SongName like concat("%",Keyword,"%");
-  
-  END
-
-GO
-
-EXECUTE GetSong
-GO
-
-  
-  END;
 
 
 
-
-
-GO
-
-  
-  END;
-  
