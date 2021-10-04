@@ -6,7 +6,7 @@ I satsified the requirements by doing the following:
 
 Created a relational database schema with a minimum of 3 tables.
 
-Created DDL (Data Definition Language) for tables and views. Aleast 2 of the tables  contain 4 or more columns.
+Created DDL (Data Definition Language) for tables and views. At least 2 of the tables  contain 4 or more columns.
 
 Two of the tables  have a many-to-many relationship.
 
@@ -71,8 +71,8 @@ Group 2: Updating / Deleting Data from a Database  i use the following one to sa
 
 
 UPDATE album
-SET store_country = 'United States'
-WHERE store_country= 'Great Britain';
+SET release_country = 'United States'
+WHERE release_country= 'Great Britain';
 
 
 I did not use these group 2 features:
