@@ -27,7 +27,7 @@ Loaded data into the database schema
 Created DML (Data Manipulation Language) to load the tables with sample data.
 
 
-Populated these tables with data by manually inserting data, or using some sort of import tool.  I have included imput script. 
+Populated these tables with data by manually inserting data, or using some sort of import tool.  I have included input script. 
 
 
 Created and called at least 4 stored procedures.
