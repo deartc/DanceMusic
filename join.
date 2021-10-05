@@ -1,3 +1,6 @@
+
+-Group 1 Used: Reading Data from a Database Write a SELECT query that utilizes a JOIN.
+
 SELECT artist_id
 FROM artist
 WHERE artist_name =  Abba'
