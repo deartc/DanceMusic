@@ -1,3 +1,6 @@
+
+/*Query 1 - used for Group 1 : Reading Data from a Database Write a SELECT query that utilizes a JOIN. */
+
 select
    a.name "artist name",
    r.name "record label name"  
