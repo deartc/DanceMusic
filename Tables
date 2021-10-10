@@ -1,0 +1,27 @@
+CREATE TABLE Artists (
+  ArtistId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+  ArtistName nvarchar(255) NOT NULL,
+  ActiveFrom date
+);
+CREATE TABLE Genres (
+  GenreId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+  Genre nvarchar(50) NOT NULL
+);
+CREATE TABLE Albums (
+  AlbumId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+  AlbumName nvarchar(255) NOT NULL,
+  TimeDate date NOT NULL,
+  ArtistId int NOT NULL,
+  GenreId int NOT NULL
+  CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistId)     
+    REFERENCES dbo.Artists (ArtistId)     
+    
+
+
+ALTER TABLE Albums
+ADD CONSTRAINT FK_Albums_Genres FOREIGN KEY (GenreId)     
+	REFERENCES dbo.Genres (GenreId)     
+	
+;
+
+
