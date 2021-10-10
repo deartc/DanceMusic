@@ -1,3 +1,11 @@
+/*I satsified the requirements by doing the following:  Created a relational database schema with a minimum of 3 tables.
+
+Created DDL (Data Definition Language) for tables and views. At least 2 of the tables  contain 4 or more columns.
+
+Two of the tables  have a many-to-many relationship.Two of the tables  have a one-to-many relationship./*
+
+
+
 CREATE TABLE Artists (
   ArtistId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   ArtistName nvarchar(255) NOT NULL,
