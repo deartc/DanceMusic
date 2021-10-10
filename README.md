@@ -1,5 +1,6 @@
 # DanceMusicProject
-This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences and contact information. I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
+This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences and contact information.  Although my goal was to to have better organization for my music collection, student dance preferences and contact information,  I had to limit it to just a specific dtabase as accessed possibly by spotify type program due to time constraints and specific class requirenments.  I plan on expanding it later after the course ends.  
+I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
 
 
 I satsified the requirements by doing the following:
@@ -31,6 +32,8 @@ Populated these tables with data by manually inserting data, or using some sort 
 
 
 Created and called at least 4 stored procedures.
+ 
+
 
 
 
