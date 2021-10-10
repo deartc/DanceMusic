@@ -44,14 +44,10 @@ CREATE TABLE Albums (
   ArtistId int NOT NULL,
   GenreId int NOT NULL
   CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistId)     
-    REFERENCES dbo.Artists (ArtistId)     
+    REFERENCES dbo.Artists (ArtistId) ;    
     
-
-
 ALTER TABLE Albums
 ADD CONSTRAINT FK_Albums_Genres FOREIGN KEY (GenreId)     
-	REFERENCES dbo.Genres (GenreId)     
-	
-;
+	REFERENCES dbo.Genres (GenreId);
 
 
