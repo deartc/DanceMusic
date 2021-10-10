@@ -2,7 +2,7 @@
 
 Created DDL (Data Definition Language) for tables and views. At least 2 of the tables  contain 4 or more columns.
 
-Two of the tables  have a many-to-many relationship.Two of the tables  have a one-to-many relationship./*
+Two of the tables  have a many-to-many relationship.Two of the tables  have a one-to-many relationship.*/
 
 
 
