@@ -1,13 +1,13 @@
--Group 2 Used i use the following one to satisfy requiremnts:
+/*Group 2 Used i use the following one to satisfy requiremnts:
 
-I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
+I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.*/
 
-UPDATE album SET release_country = 'United States' WHERE release_country= 'Great Britain';
+UPDATE album SET country = 'USA' WHERE country= 'Great Britain';
 
 
--Group 3: Optimizing a Database
+/*Group 3: Optimizing a Database
 
-I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries*/
 
 UPDATE music AS m SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) WHERE albumID IS NULL AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
 
