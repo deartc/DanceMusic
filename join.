@@ -1,15 +1,12 @@
 
--Group 1 Used: Reading Data from a Database Write a SELECT query that utilizes a JOIN.
 
-Group 1 not used: Write a SELECT query that utilizes a JOIN with 3 or more tables. Write a SELECT query that utilizes a LEFT JOIN. 
-Write a SELECT query that utilizes a variable in the WHERE clause. Write a SELECT query that utilizes an ORDER BY clause.
-Write a SELECT query that utilizes a GROUP BY clause along with an aggregate function. Write a SELECT query that utilizes a CALCULATED FIELD.
-Write a SELECT query that utilizes a SUBQUERY. Write a SELECT query that utilizes a JOIN, at least 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC) 
-AND A GROUP BY clause with an aggregate function. Write a SELECT query that utilizes a JOIN with 3 or more tables, at 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC), 
-a GROUP BY clause with an aggregate function, and a HAVING clause. 
-Write a SELECT query that uses a WHERE clause. Write a SELECT query that uses an OR and an AND operator. Write a SELECT query that filters NULL rows using IS NOT NULL.
+/* Teresa Hawkins */
+/* DanceMusic Project */
 
 
+
+/*Query  - used for Group 1 : 
+Write a SELECT query that uses an OR and an AND operator. . */
 
 SELECT artist_id
 FROM artist
@@ -23,7 +20,9 @@ SELECT COUNT(*)
 FROM track
 WHERE artist_id=1 AND album_id =1 
 
--Join using Inner Join Statement:
+
+
+/* Query - used for Group 1. Write a SELECT query that utilizes a variable in the WHERE clause. Write a SELECT query that utilizes an ORDER BY clause. */
 
 SELECT COUNT( * ) 
 FROM track
@@ -32,13 +31,26 @@ INNER JOIN album ON album.album_id = track.album_id
 WHERE artist.artist_name =  'Abba'
 AND album.album_name =  'Joy'
 
-- Using an inner join, list the albums by Abba.
+
+
+/*Query  - used for Group 1 : Reading Data from a Database Write a SELECT query that utilizes a JOIN. */
 
 
 SELECT album_name
 FROM album
 INNER JOIN artist ON album.artist_id=artist.artist_id
 WHERE artist_name='Abba'
+
+
+/* -Group 1 Used: Reading Data from a Database Write a SELECT query that utilizes a JOIN.
+
+Group 1 not used: Write a SELECT query that utilizes a JOIN with 3 or more tables. Write a SELECT query that utilizes a LEFT JOIN. 
+Write a SELECT query that utilizes a variable in the WHERE clause. Write a SELECT query that utilizes an ORDER BY clause.
+Write a SELECT query that utilizes a GROUP BY clause along with an aggregate function. Write a SELECT query that utilizes a CALCULATED FIELD.
+Write a SELECT query that utilizes a SUBQUERY. Write a SELECT query that utilizes a JOIN, at least 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC) 
+AND A GROUP BY clause with an aggregate function. Write a SELECT query that utilizes a JOIN with 3 or more tables, at 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC), 
+a GROUP BY clause with an aggregate function, and a HAVING clause. 
+Write a SELECT query that uses a WHERE clause. Write a SELECT query that uses an OR and an AND operator. Write a SELECT query that filters NULL rows using IS NOT NULL./*
 
 
 
