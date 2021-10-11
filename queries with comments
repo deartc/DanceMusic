@@ -25,18 +25,6 @@ INNER JOIN Genres g
 ON al.GenreId = g.GenreId
 WHERE g.Genre = 'Rock';
 
-Write a  SELECT query that utilizes a JOIN with 3 or more tables.
-Write a  SELECT query that utilizes a LEFT JOIN.
-Write a  SELECT query that utilizes a variable in the WHERE clause.
-Write a  SELECT query that utilizes an ORDER BY clause.
-Write a  SELECT query that utilizes a GROUP BY clause along with an aggregate function.
-Write a SELECT query that utilizes a CALCULATED FIELD.
-Write a SELECT query that utilizes a SUBQUERY.
-Write a SELECT query that utilizes a JOIN, at least 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC) AND A GROUP BY clause with an aggregate function.
-Write a SELECT query that utilizes a JOIN with 3 or more tables, at 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC), a GROUP BY clause with an aggregate function, and a HAVING clause.
-Write a SELECT query that uses a WHERE clause.
-Write a  SELECT query that uses an OR and an AND operator.
-Write a  SELECT query that filters NULL rows using IS NOT NULL.
 
 
 /*AVG	function	with	WHERE	clause*/
@@ -47,13 +35,8 @@ of	all	Album*/
 /* Simple JOIN SELECT b.bandName, a.title FROM Band b */
 JOIN Album a ON b.bandId = a.bandId;
 /*Selects	band	names	and	the	bands	associated	
-
-
-
-
-
-
 album	titles*/
+
 /*Simple	JOIN	with	table	aliases SELECT b.bandName, a.title
 FROM Band b */
 JOIN Album a ON b.bandId = a.bandId;
