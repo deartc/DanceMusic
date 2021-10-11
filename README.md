@@ -1,5 +1,5 @@
 # DanceMusicProject
-This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences and contact information.  Although those are my ultimate goals,  I had to limit my class project to just using tables accessed possibly by spotify type program due to time constraints and specific class requirenments.  I plan on expanding it later after the course ends.  
+This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences and contact information.  Although those are my ultimate goals,  I had to limit my class project to just using tables accessed possibly by Spotify type program due to time constraints and specific class requirenments.  I plan on expanding it later after the course ends.  
 I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  
 
 
@@ -74,17 +74,13 @@ Group 2: Updating / Deleting Data from a Database  i use the following one to sa
 
 
 UPDATE album
-SET release_country = 'United States'
-WHERE release_country= 'Great Britain';
+SET country = 'USA'
+WHERE country= 'Great Britain';
 
 
 I did not use these group 2 features:
 Write a a DML statement that DELETEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
 Write a DML statement that DELETEs rows from a table that another table references. This script will have to also DELETE any records that reference these rows. Both of the DELETE statements need to be wrapped in a single TRANSACTION.
-
-
-
-
 
 
 Group 3: Optimizing a Database
