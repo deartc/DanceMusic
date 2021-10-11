@@ -11,3 +11,31 @@ ON ar.ArtistId = al.ArtistId
 INNER JOIN Genres g 
 ON al.GenreId = g.GenreId
 WHERE g.Genre = 'Rock';
+
+
+/*Selects	the	title	and	creation	year	of	all	Album
+alphabetically	ordered	by	title*/
+
+COUNT	function SELECT COUNT(*) FROM Album 
+/*Returns	the	number	of	Album in	the	database*/
+
+
+/*COUNT	function	with	WHERE	clause*/
+ SELECT COUNT(*) FROM Album WHERE year > 2000;
+/*Returns	the	number	of	Album created	after	
+the	year	2000*/
+
+/*AVG	function	with	WHERE	clause*/
+ SELECT AVG(trackLength) from AlbumSong
+WHERE trackNumber = 1
+/*Returns	the	average	length	of	the	first	track	
+of	all	Album*/
+/* Simple JOIN SELECT b.bandName, a.title FROM Band b */
+JOIN Album a ON b.bandId = a.bandId;
+/*Selects	band	names	and	the	bands	associated	
+album	titles*/
+/*Simple	JOIN	with	table	aliases SELECT b.bandName, a.title
+FROM Band b */
+JOIN Album a ON b.bandId = a.bandId;
+/*Selects	band	names	and	the	bands	associated	
+album	title */
