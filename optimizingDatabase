@@ -1,0 +1,7 @@
+
+
+/* Group 3: optimizing a Database */
+
+/*I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries. */
+
+UPDATE music AS m SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) WHERE albumID IS NULL AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;/*
