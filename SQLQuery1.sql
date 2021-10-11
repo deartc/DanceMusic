@@ -1,4 +1,4 @@
---  List the number of songs per artist in descending order
+/* List the number of songs per artist in descending order*/
 
 select
     ar.name "Artist Name",
