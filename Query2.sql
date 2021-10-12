@@ -1,4 +1,4 @@
--- 1. List all artists for each record label sorted by artist name. 
+--  List all artists for each record label sorted by artist name. 
 select
 	ar.name "Artist Name",
 	r.name "Record Label Name"  
