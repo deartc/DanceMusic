@@ -1,5 +1,5 @@
 
--- 4. Which artist or artists have recorded the most number of songs?
+--Which artist or artists have recorded the most number of songs?
 
 select
    ar.name "Artist Name",
