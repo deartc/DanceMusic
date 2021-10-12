@@ -9,6 +9,9 @@ IS NULL AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
 
 
 
-CREATE UNIQUE NONCLUSTERED INDEX UIX_Employees_FirststNamee_LastName On Employees(FirstName, LastName)
+CREATE UNIQUE NONCLUSTERED INDEX UIX_Employees_FirsttName_LastName On Employees(FirstName, LastName)
+
+
+
 
 
