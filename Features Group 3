@@ -2,22 +2,29 @@
 
 /*Features Group 3: optimizing a Database */
 
-/*I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries. Group 3: Optimizing a Database
+/*I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+Group 3: Optimizing a Database*/
 
-I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+UPDATE music AS m SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) WHERE albumID IS NULL
+AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
 
-UPDATE music AS m SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) WHERE albumID IS NULL AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
+
+
 
 I did not include the folowing third features: Design a NONCLUSTERED INDEX with TWO KEY COLUMNS that improves the performance of one of the above queries.
 Design a NONCLUSTERED INDEX with AT LEAST ONE KEY COLUMN and AT LEAST ONE INCLUDED COLUMN that improves the performance of one of the above queries.
 */
 
-UPDATE music AS m SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) WHERE albumID 
-IS NULL AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
+
+/*I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+Group 3: Optimizing a Database*/
 
 
+CREATE UNIQUE NONCLUSTERED INDEX UIX_Employee_FirstName_LastName On Employee(FirstName, LastName)
 
-CREATE UNIQUE NONCLUSTERED INDEX UIX_Employees_FirsttName_LastName On Employees(FirstName, LastName)
+
+/*I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.
+Group 3: Optimizing a Database*/
 
 CREATE NONCLUSTERED INDEX [IndexName] 
 ON [SchemaName].[TableName] ([ColumnName] DESC)
@@ -25,6 +32,9 @@ GO
 
 
 
+/* Design a NONCLUSTERED INDEX with TWO KEY COLUMNS that improves the performance of one of the above queries.
+Design a NONCLUSTERED INDEX with AT LEAST ONE KEY COLUMN and AT LEAST ONE INCLUDED COLUMN that improves the performance of one of the above queries.
+*/
 Artists (
     ArtistID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
     ArtistName varchar(100) NOT NULL)
