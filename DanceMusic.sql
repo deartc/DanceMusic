@@ -44,12 +44,4 @@ ALTER TABLE Albums
 ADD CONSTRAINT FK_Albums_Genres FOREIGN KEY (GenreId)     
 	REFERENCES dbo.Genres (GenreId);
 
-CREATE TABLE Artists (
-  ArtistId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-  ArtistName nvarchar(255) NOT NULL,
-  ActiveFrom date
-);
-CREATE TABLE Genres (
-  GenreId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-  Genre nvarchar(50) NOT NULL
-);
+
