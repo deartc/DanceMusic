@@ -1,0 +1,53 @@
+
+
+/*Features Group 3: optimizing a Database */
+
+/*I included the following third feature: Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries. */
+
+UPDATE music AS m SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) WHERE albumID 
+IS NULL AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
+
+
+
+CREATE UNIQUE NONCLUSTERED INDEX UIX_Employees_FirsttName_LastName On Employees(FirstName, LastName)
+
+CREATE NONCLUSTERED INDEX [IndexName] 
+ON [SchemaName].[TableName] ([ColumnName] DESC)
+GO
+
+
+
+Artists (
+    ArtistID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
+    ArtistName varchar(100) NOT NULL)
+ 
+Albums (
+    AlbumID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
+    ArtistID int NOT NULL,
+    AlbumName varchar(100) NOT NULL,
+    CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistID)
+        REFERENCES Artists (ArtistID))
+ 
+Songs (
+    SongID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
+    AlbumID int NOT NULL,
+    SongName varchar(100) NOT NULL,
+    NumberOfListens int NOT NULL DEFAULT 0
+    CONSTRAINT FK_Songs_Albums FOREIGN KEY (AlbumID)
+        REFERENCES Albums (AlbumID))
+CREATE UNIQUE INDEX IX_Artists_Name ON Artists (ArtistName)
+CREATE UNIQUE INDEX IX_Albums_Artist_Name ON Albums (ArtistID, AlbumName)
+CREATE UNIQUE INDEX IX_Songs_Album_Name ON Songs (AlbumID, SongName)
+    INCLUDE (NumberOfListens)
+ 
+
+
+
+
+
+
+
+
+
+
+
