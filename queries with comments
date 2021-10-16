@@ -32,13 +32,3 @@ WHERE g.Genre = 'Rock';
 WHERE trackNumber = 1
 /*Returns	the	average	length	of	the	first	track	
 of	all	Album*/
-/* Simple JOIN SELECT b.bandName, a.title FROM Band b */
-JOIN Album a ON b.bandId = a.bandId;
-/*Selects	band	names	and	the	bands	associated	
-album	titles*/
-
-/*Simple	JOIN	with	table	aliases SELECT b.bandName, a.title
-FROM Band b */
-JOIN Album a ON b.bandId = a.bandId;
-/*Selects	band	names	and	the	bands	associated	
-album	title */
