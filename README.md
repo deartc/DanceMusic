@@ -68,7 +68,7 @@ Write a  SELECT query that filters NULL rows using IS NOT NULL.
 
 
 
-Group 2: Updating / Deleting Data from a Database  i use the following one to satisfy requiremnts:
+Group 2: Updating / Deleting Data from a Database  I used the following one to satisfy requiremnts:
 
   I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
 
