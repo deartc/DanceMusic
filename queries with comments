@@ -1,10 +1,4 @@
 
-/*Query - used for Group 1 : Reading Data from a Database Write a SELECT query that utilizes a JOIN. */
-/*Selects	the	title	and	creation	year	of	all	Album
-alphabetically	ordered	by	title*/
-
-COUNT	function SELECT COUNT(*) FROM Album 
-/*Returns	the	number	of	Album in	the	database*/
 
 
 /*COUNT	function	with	WHERE	clause*/
@@ -32,3 +26,87 @@ WHERE g.Genre = 'Rock';
 WHERE trackNumber = 1
 /*Returns	the	average	length	of	the	first	track	
 of	all	Album*/
+
+
+
+	-- title and artist who recorded the song 'Peace'
+	SELECT title, artist
+	FROM album JOIN track
+	ON (album.asin=track.album)
+	WHERE song = 'Peace'
+	
+
+	-- Artist who recorded the song 'Joy'? 
+	SELECT artist
+	FROM album JOIN track
+	ON (album.asin = track.album)
+	WHERE song = 'Joy'
+	
+
+
+
+
+
+
+	
+
+	--GROUP BY  on the joined table. 
+	SELECT title, COUNT(*)
+	FROM album JOIN track ON (asin=album)
+	GROUP BY title
+	
+
+	--show the title and the total number of tracks containing the word 'Love' (albums not having not shown 
+	
+	SELECT title, COUNT(*)
+	FROM album JOIN track ON (asin=album)
+	WHERE song LIKE '%Love%'
+	GROUP BY title
+	
+
+
+
+
+
+	
+
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
