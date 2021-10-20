@@ -11,7 +11,7 @@ AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
 
 
 
-I did not include the folowing third features: Design a NONCLUSTERED INDEX with TWO KEY COLUMNS that improves the performance of one of the above queries.
+/*I did not include the folowing third features: Design a NONCLUSTERED INDEX with TWO KEY COLUMNS that improves the performance of one of the above queries.
 Design a NONCLUSTERED INDEX with AT LEAST ONE KEY COLUMN and AT LEAST ONE INCLUDED COLUMN that improves the performance of one of the above queries.
 */
 
