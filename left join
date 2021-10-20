@@ -4,3 +4,60 @@
     from           genre
          left join track using(genreid)
 group by genre.name order by genre.name;
+
+
+
+
+ 
+ select genre.name, count(*),
+         repeat('■', (  100.0
+                      * count(*)
+                      / sum(count(*)) over()
+                     )::integer
+               ) as pct
+    from genre
+         left join track using(genreid)
+group by genre.name
+order by genre.name;
+
+
+  
+  
+  
+  
+  select title as album,
+         array_agg(distinct genre.name order by genre.name) as genres
+    from      track
+         join genre using(genreid)
+         join album using (albumid)
+group by title
+  having count(distinct genre.name) > 1;
+  
+  
+  
+ 
+ 
+ with multi_genre_albums(albumid, artistid, title) as
+ (
+    select albumid, artistid, title
+      from      track
+           join genre using(genreid)
+           join album using (albumid)
+  group by albumid, artistid, title
+    having count(distinct genre.name) > 1
+ )
+ 
+ 
+ 
+ 
+ 
+ 
+ select artist.name as artist,
+         title as album,
+         genre.name as genre,
+         array_agg(track.name order by trackid) as tracks
+    from multi_genre_albums
+         join track using(albumid)
+         join genre using(genreid)
+         join artist using(artistid)
+group by artist, album, genre;
