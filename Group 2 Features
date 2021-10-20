@@ -19,13 +19,19 @@ UPDATE Students SET
         (MAJOR='Art' AND FirstName='Pete');
 
 
- Write a DML statement that DELETEs rows from a
+/*  Unsure if correct.   Write a DML statement that DELETEs rows from a
 table that another table references. This script will have to also DELETE any records that reference these rows.
 Both of the DELETE statements need to be wrapped in a single TRANSACTION.*/
 
+ALTER TABLE Students
+        DROP Row PlaylistID;
 
 
-/*I  uses these group 2 features: Write a a DML statement that DELEdEs a set of rows with a WHERE clause. 
+
+
+
+
+/*I  used these group 2 features: Write a a DML statement that DELETEs a set of rows with a WHERE clause. 
 The values used in the WHERE clause should be a variable.
 
 DELETE FROM Students
