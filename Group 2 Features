@@ -4,7 +4,18 @@ I used the write a DML statement that UPDATEs a set of rows with a WHERE clause.
 
 UPDATE album SET country = 'USA' WHERE country= 'Great Britain';
 
-/*I did not use these group 2 features: Write a a DML statement that DELETEs a set of rows with a WHERE clause. 
-The values used in the WHERE clause should be a variable. Write a DML statement that DELETEs rows from a
+ Write a DML statement that DELETEs rows from a
 table that another table references. This script will have to also DELETE any records that reference these rows.
 Both of the DELETE statements need to be wrapped in a single TRANSACTION.*/
+
+
+
+
+
+DELETE FROM Students
+        WHERE LastName='Smith';
+DELETE FROM Students
+        WHERE LastName like '%Smith%';
+        AND FirstName='John';
+DELETE FROM Students;
+
