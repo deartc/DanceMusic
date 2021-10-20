@@ -10,7 +10,8 @@ Both of the DELETE statements need to be wrapped in a single TRANSACTION.*/
 
 
 
-
+/*I  uses these group 2 features: Write a a DML statement that DELEdEs a set of rows with a WHERE clause. 
+The values used in the WHERE clause should be a variable.
 
 DELETE FROM Students
         WHERE LastName='Smith';
