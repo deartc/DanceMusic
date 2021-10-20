@@ -57,6 +57,10 @@ CREATE UNIQUE INDEX IX_Artists_Name ON Artists (ArtistName)
 CREATE UNIQUE INDEX IX_Albums_Artist_Name ON Albums (ArtistID, AlbumName)
 CREATE UNIQUE INDEX IX_Songs_Album_Name ON Songs (AlbumID, SongName)
     INCLUDE (NumberOfListens)
+    
+    
+    
+    
  
 
 
