@@ -1,0 +1,6 @@
+ select genre.name, count(*),
+         sum(count(*)) over () as tracks,
+         round(100.0 * count(*) / sum(count(*)) over(), 2) as pct
+    from           genre
+         left join track using(genreid)
+group by genre.name order by genre.name;
