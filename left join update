@@ -35,6 +35,45 @@ group by title
   
   
   
+  
+  
+  
+  
+  
+  
+ select artist.name as artist,
+       album.title as album,
+       track.name as track,
+       row_number()
+         over(partition by albumid
+                  order by trackid)
+         as n,
+       count(genreid)
+         over(partition by albumid, genreid)
+         as same
+
+  from track
+       join
+       (
+          select albumid,
+                 array_agg(distinct genre.name
+                           order by genre.name)
+                   as genres
+            from track
+                 join genre using(genreid)
+        group by albumid
+          having count(distinct genre.name) > 1
+        )
+        as multi_genre_album(albumid, genres) using (albumid)
+
+        join genre using(genreid)
+        join album using(albumid)
+        join artist using(artistid)
+        
+order by artist, album, trackid; 
+  
+  
+  
  
  
  with multi_genre_albums(albumid, artistid, title) as
