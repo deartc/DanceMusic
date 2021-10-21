@@ -1,0 +1,37 @@
+
+  
+  create procedure add_album (AlbumID int, AlbumName char(100), BandName char(100), BandID int, NumberOfSongs int, Genre char(100)) 
+BEGIN
+INSERT INTO ARTIST (AlbumID, AlbumName, BandName, BandID, NumberOfSongs, Genre) VALUES(
+ AlbumID, AlbumName, BandName, BandID, NumberOfSongs, Genre);  
+END
+
+create procedure add_songs (SongID int, SongName char(100), AlbumID int, AlbumName char(100), BandID int, BandName char(100), Lyrical_Themes char(100), GuestArtistschar(100)) 
+BEGIN
+INSERT INTO ARTIST (SongID, SongName, AlbumID, AlbumName, BandID, BandName, Lyrical_Themes, GuestArtists) VALUES(
+ SongID, SongName, AlbumID, AlbumName, BandID, BandName, Lyrical_Themes, GuestArtists);  
+END
+
+create procedure GetSong (Keyword CHAR (100))
+  BEGIN
+  select SongName, AlbumName, BandName, Lyrical_Themes, GuestArtists
+  from SONGS
+  where BandName like concat("%",Keyword,"%")
+or  AlbumName like concat("%",Keyword,"%")
+or  SongName like concat("%",Keyword,"%");
+  
+  END;
+
+
+
+create procedure GetBandMember(Keyword CHAR (100))
+  BEGIN
+  select First_Name, Last_Name, Stage_Name, Role, ii.BandName
+  from INDIVIDUAL_ARTIST i
+  join BAND ii
+  on i.BandID = ii.BandID
+  where First_Name like concat("%",Keyword,"%")
+  or Last_Name like concat("%",Keyword,"%")
+;
+  
+  END;
