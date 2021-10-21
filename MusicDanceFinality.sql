@@ -1,3 +1,6 @@
+
+
+/*DanceMusic Tables*/
 CREATE TABLE "Playlist"
 (
     "PlaylistId" INT NOT NULL,
