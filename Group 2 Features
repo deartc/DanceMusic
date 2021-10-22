@@ -14,9 +14,9 @@ UPDATE Students SET
         LastName='Jones' WHERE
         StudentID=987654321;
 UPDATE Students SET
-        LastName='Jones', Major='Theatre'
+        LastName='Jones', City='Louisville
         WHERE StudentID=987654321 OR
-        (MAJOR='Art' AND FirstName='Pete');
+        (City='Jeffersonville' AND FirstName='Sam');
 
 
 /*  Unsure if correct.   Write a DML statement that DELETEs rows from a
