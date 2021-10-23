@@ -1,4 +1,4 @@
-
+/*Created DDL (Data Definition Language) for tables and views. At least 2 of the tables contain 4 or more columns*/
 
  create procedure add_album (AlbumID int, AlbumName char(100), BandName char(100), BandID int, NumberOfSongs int, Genre char(100)) 
 BEGIN
