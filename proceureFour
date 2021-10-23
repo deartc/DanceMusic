@@ -1,4 +1,6 @@
-/*Created DDL (Data Definition Language) for tables and views. At least 2 of the tables contain 4 or more columns*/
+/*Created DDL (Data Definition Language) for tables and views.  Created DML (Data Manipulation Language) to load the tables with sample data.
+Created and called at least 4 stored procedures.
+Created stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.*/
 
  create procedure add_album (AlbumID int, AlbumName char(100), BandName char(100), BandID int, NumberOfSongs int, Genre char(100)) 
 BEGIN
