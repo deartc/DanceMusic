@@ -6,6 +6,9 @@ At least 2 of the tables  contain 4 or more columns. Each table is related to on
 /*The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR */
 
 
+drop database music;
+CREATE DATABASE IF NOT EXISTS music;
+use music;
 
 CREATE TABLE "Playlist"
 (
