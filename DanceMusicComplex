@@ -1,3 +1,8 @@
+drop database music;
+CREATE DATABASE IF NOT EXISTS music;
+use music;
+
+
 CREATE TABLE "Playlist"
 (
     "PlaylistId" INT NOT NULL,
