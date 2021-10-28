@@ -101,7 +101,7 @@ Design a NONCLUSTERED INDEX with AT LEAST ONE KEY COLUMN and AT LEAST ONE INCLUD
 
 Correct use of Git/Github and commits: I followed the correct steps in the project guidelines to create and name the github repository that would reflect a distinct repository. I then used the proper guidelines to initialize the project and add files using git bash and the command line. I then far exceeded the minimum number of commits needed to pass.
 
-I also named my file a distinct name describing my project.
+I also named my file a distinct name describing my project of DanceMusic
 
 
 
