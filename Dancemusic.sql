@@ -1,6 +1,8 @@
 	
 
+	--This has possible tables if expanded for students
 	--CREATE TABLES	
+	
 		
 	-- ARTIST
 	CREATE TABLE [music].[Artist]
