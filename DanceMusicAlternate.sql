@@ -32,7 +32,7 @@ CREATE TABLE Artists (
   ActiveFrom date
 );
 CREATE TABLE Genres (
-  GenreId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+  GenreId int IDENTITY(1,1) NOT NULL PRIMARY KEY,  yes
   Genre nvarchar(50) NOT NULL
 );
 CREATE TABLE Albums (
