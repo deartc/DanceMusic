@@ -26,8 +26,6 @@ CREATE TABLE "Track"
     "GenreId" INT,
     "Composer" VARCHAR(220),
     "Milliseconds" INT NOT NULL,
-    "Bytes" INT,
-    "UnitPrice" NUMERIC(10,2) NOT NULL,
     CONSTRAINT "PK_Track" PRIMARY KEY  ("TrackId")
 );
 
