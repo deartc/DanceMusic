@@ -5,41 +5,17 @@ I used Window and SQL Express.   To run my project your must do the following: G
 
 I satsified the requirements by doing the following:
 
-Created a relational database schema with a minimum of 3 tables.
-
-Created DDL (Data Definition Language) for tables and views. At least 2 of the tables  contain 4 or more columns.
-
-Two of the tables  have a many-to-many relationship.
-
-
-Two of the tables  have a one-to-many relationship.
-
-
-The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR
-
-
+   The following are included in  the git hub section  called DDL tables to clarify I completed the table requirements.  I  created a relational database schema with a minimum of 3 tables and created DDL (Data Definition Language) for tables and views. At least 2 of the tables  contain 4 or more columns. Two of the tables  have a many-to-many relationship.  Two of the tables  have a one-to-many relationship.The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR
 Each table is related to one or more of the other tables via a primary key/foreign key relationship.
 
-To complete the requirements I did the following:
+The following are included in the git hub section called Insertion to clafify I completed the requirementsL
+ I created DML (Data Manipulation Language) to load the tables with sample data.
+I populated these tables with data by manually inserting data, or using some sort of import tool.  I have included input script. 
 
-Loaded data into the database schema
+The following are included inthe git hub section called Stored Produres to clafiy I completed the requriements. 
+I Created and called at least 4 stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
 
-
-Created DML (Data Manipulation Language) to load the tables with sample data.
-
-
-Populated these tables with data by manually inserting data, or using some sort of import tool.  I have included input script. 
-
-
-Created and called at least 4 stored procedures.
- 
-
-
-
-
-Created stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
-
-
+I included a separate section of my git hub to clarify I completed features from all 3 group
 Chose at least 1 item from each group on the Features List below and implemented them in my stored procedures or DDL script:
 
 
