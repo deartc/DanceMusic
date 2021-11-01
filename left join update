@@ -9,16 +9,7 @@ group by genre.name order by genre.name;
 
 
  
- select genre.name, count(*),
-         repeat('■', (  100.0
-                      * count(*)
-                      / sum(count(*)) over()
-                     )::integer
-               ) as pct
-    from genre
-         left join track using(genreid)
-group by genre.name
-order by genre.name;
+
 
 
   
