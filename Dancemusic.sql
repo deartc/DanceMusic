@@ -34,6 +34,11 @@
 	,	ArtistID	int 
 	,	PRIMARY KEY	(SongID, ArtistID)
 	,	FOREIGN KEY (SongID) REFERENCES [music].[Song] (SongID)
+	 
+	 
+	 
+	 
+	 --Expansion of my database involving students
 	,	FOREIGN KEY (ArtistID) REFERENCES [music].[Artist] (ArtistID)
 		);
 		
