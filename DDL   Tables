@@ -29,8 +29,12 @@ CREATE TABLE "Track"
     "TrackId" INT NOT NULL,
     "Name" VARCHAR(200) NOT NULL,
     "AlbumId" INT,
+    "MediaTypeId" INT NOT NULL,
     "GenreId" INT,
+    "Milliseconds" INT NOT NULL,
     CONSTRAINT "PK_Track" PRIMARY KEY  ("TrackId")
+    
+  
 
 
 CREATE TABLE Artists (
