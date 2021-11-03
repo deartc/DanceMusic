@@ -3,6 +3,21 @@ CREATE DATABASE IF NOT EXISTS music;
 use music;
 
 
+IF OBJECT_ID('Genre', 'U') IS NOT NULL 
+    DROP TABLE Genre;
+    
+IF OBJECT_ID('Playlist', 'U') IS NOT NULL
+    DROP TABLE Playlist;
+
+IF OBJECT_ID('Album', 'U') IS NOT NULL
+    DROP TABLE Album;
+
+
+
+
+
+
+
 CREATE TABLE "Playlist"
 (
     "PlaylistId" INT NOT NULL,
