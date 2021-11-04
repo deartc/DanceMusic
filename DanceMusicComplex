@@ -8,6 +8,10 @@ IF OBJECT_ID('Genre', 'U') IS NOT NULL
     
 IF OBJECT_ID('Playlist', 'U') IS NOT NULL
     DROP TABLE Playlist;
+   
+ IF OBJECT_ID('PlaylistTrack', 'U') IS NOT NULL  
+   DROP TABLE PlaylistTrack;
+    
 
 IF OBJECT_ID('Album', 'U') IS NOT NULL
     DROP TABLE Album;
