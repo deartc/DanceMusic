@@ -1,5 +1,5 @@
 # DanceMusicProject
-This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences,  and contact information.  Although those are my ultimate goals,  I had to limit my class project to just using tables accessed possibly by Spotify type program due to time constraints and specific class requirenments.  I plan on expanding it later after the course ends.  
+This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences,  and contact information.  Although those are my ultimate goals,  I had to limit my class project due to time constraints and specific class requirenments.  I plan on expanding it later after the course ends.  
 I used Window and SQL Express.   To run my project your must do the following: Go to github.com/deartc/DanceMusic.  Clone the repository.  Open in a Sql compatabile program (  I only tested with SQL Express).  
 
 
