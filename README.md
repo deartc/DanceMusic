@@ -8,7 +8,7 @@ I satsified the requirements by doing the following:
    The following are included in  the git hub section  called DDL tables to clarify I completed the table requirements.  I  created a relational database schema with a minimum of 3 tables and created DDL (Data Definition Language) for tables and views. At least 2 of the tables  contain 4 or more columns. Two of the tables  have a many-to-many relationship.  Two of the tables  have a one-to-many relationship.The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR
 Each table is related to one or more of the other tables via a primary key/foreign key relationship.
 
-The following are included in the git hub section called Insertion to clafify I completed the requirementsL
+The following are included in the git hub section called Insertion to clarify I completed the requirementsL
  I created DML (Data Manipulation Language) to load the tables with sample data.
 I populated these tables with data by manually inserting data, or using some sort of import tool.  I have included input script. 
 
