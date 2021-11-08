@@ -36,6 +36,59 @@ VALUES
   
   
   
+  
+  
+  create procedure Add AlbumId int, AlbumName nvarchar(255), TimeDate date, Artist, GenreId int 
+ 
+ BEGIN
+ INSERT INTO AlbumId  (AlbumName, TimeDate, Artist, GenreId) VALUES 
+  Life, 1984, Jeans, 1 
+  Soul, 1985, Bills, 2
+ Peace, 1986, Sills, 3 
+
+ END
+
+
+
+
+create procedure add ArtistID int,  Name varchar(100), Country varchar(100), AccountID int
+
+
+
+BEGIN
+ INSERT INTO ArtistId (Name, Country, AccountID) VALUES 
+  Life, Britain, 1 
+  Soul, Sweeden, 2
+  Peace, Denmark, 3 
+END
+
+
+create procedure ADD AlbumTrack int, AlbumID nvarchar(255), TrackNo int, Artist nvarchar(255, SongId int
+BEGIN
+ 
+ INSERT INTO AlbumTrack  (AlbumID, TrackNo, Artist, SongId) VALUES 
+  Lif, 1984, Jeans, 1 
+  Sou, 1985, Bills, 2
+ Peac, 1986, Sills, 3 
+
+ END
+
+                        
+
+
+create procedure ADD SongID int,  Name varchar(100), Country varchar(100), AccountID int 
+
+
+
+
+
+
+
+
+
+  
+  
+  
   ('Kilter', '1987-02-07', 1, 1),		
   ('Bass', '1969-06-01', 4, 2),			
   ('All Night', '2010-04-05', 3, 2)
