@@ -15,10 +15,10 @@ INSERT INTO ARTIST (AlbumID, AlbumName, BandName, BandID, NumberOfSongs, Genre) 
  AlbumID, AlbumName, BandName, BandID, NumberOfSongs, Genre);  
 END
 
-create procedure add_songs (SongID int, SongName char(100), AlbumID int, AlbumName char(100), BandID int, BandName char(100), Lyrical_Themes char(100), GuestArtistschar(100)) 
+create procedure add_songs (SongID int, SongName char(100), AlbumID int, AlbumName char(100), BandID int, BandName char(100), Style char(100), Rhythym char(100)) 
 BEGIN
-INSERT INTO ARTIST (SongID, SongName, AlbumID, AlbumName, BandID, BandName, Lyrical_Themes, GuestArtists) VALUES(
- SongID, SongName, AlbumID, AlbumName, BandID, BandName, Lyrical_Themes, GuestArtists);  
+INSERT INTO ARTIST (SongID, SongName, AlbumID, AlbumName, BandID, BandName, Style, Rhythym) VALUES(
+ SongID, SongName, AlbumID, AlbumName, BandID, BandName,Style , Rhythym);  
 END
 
 
