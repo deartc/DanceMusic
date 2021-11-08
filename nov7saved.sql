@@ -11,8 +11,8 @@ IF OBJECT_ID('AlbumTrack', 'U') IS NOT NULL
  
  
  
-IF OBJECT_ID(' PerformsOnSong ', 'U') IS NOT NULL  
-   DROP TABLE PerformsOnSong;
+IF OBJECT_ID('Band', 'U') IS NOT NULL  
+   DROP TABLE Band;
 IF OBJECT_ID('Song', 'U') IS NOT NULL  
    DROP TABLE Song;
  
@@ -47,8 +47,8 @@ CREATE TABLE Albums (
                 ,               Duration              int
                                 );
                                 
-                --PERFORMSONSONG
-                CREATE TABLE [music].PerformsOnSong 
+                --BAND
+                CREATE TABLE [music].Band
                 (              SongID                  int 
                 ,               ArtistID int 
                 ,               PRIMARY KEY     (SongID, ArtistID)
