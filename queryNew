@@ -5,7 +5,7 @@
 	WHERE song = 'Peace'
 	
 
-	--2. Artist who recorded the song 'Joy'? 
+	-- Artist who recorded the song 'Joy'? 
 	SELECT artist
 	FROM album JOIN track
 	ON (album.asin = track.album)
@@ -25,7 +25,7 @@
 	GROUP BY title
 	
 
-	--5.For each album show the title and the total number of tracks containing the word 'Love' (albums not having not shown 
+	--For each album show the title and the total number of tracks containing the word 'Love' (albums not having not shown 
 	
 	SELECT title, COUNT(*)
 	FROM album JOIN track ON (asin=album)
