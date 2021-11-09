@@ -63,18 +63,7 @@ CREATE TABLE Albums (
                 ,               MainArtist           int NULL
                 ,               FOREIGN KEY (MainArtist) REFERENCES [music].[Artist] (ArtistID)
                                 );
-                                
-                --ALBUMTRACK
-                CREATE TABLE [music].AlbumTrack
-                (              AlbumID                              int 
-                ,               TrackNo                               int
-                ,               SongID                  int
-                ,               PRIMARY KEY (AlbumID, TrackNo)
-                ,               FOREIGN KEY (AlbumID) REFERENCES [music].[Album] (AlbumID)
-                ,               FOREIGN KEY (SongID) REFERENCES [music].[Song] (SongID)
-                                );
               
-                
                
 
 /*Created DDL (Data Definition Language) for tables and views.  Created DML (Data Manipulation Language) to load the tables with sample data.
