@@ -29,6 +29,23 @@ GO
 
   
   END;
+  
+  
+  --Alter song and album table
+  
+  
+  CREATE UNIQUE INDEX song_index
+  ON Song (songId) PCTFREE 10 ALLOW REVERSE SCANS;
+ 
+ALTER TABLE song
+  ADD CONSTRAINT PK_song
+  PRIMARY KEY (songid);
+ 
+ALTER TABLE song
+  ADD CONSTRAINT fk_album
+  FOREIGN KEY (albumid)
+  REFERENCES album (albumid);
+
 
 
 
