@@ -3,28 +3,28 @@ CREATE DATABASE IF NOT EXISTS music;
 use music;
 
 
-IF OBJECT_ID('Genre', 'U') IS NOT NULL 
+IF TABLE Genre DOES NOT EXIST;
     DROP TABLE Genre;
     
-IF OBJECT_ID('Playlist', 'U') IS NOT NULL
+IF TABLE PLaylist DOES NOT EXIST;
     DROP TABLE Playlist;
    
- IF OBJECT_ID('Track', 'U') IS NOT NULL  
+ IF TABLE Track DOES NOT EXIST;
    DROP TABLE Track;
    
    
-    IF OBJECT_ID('PlaylistTrack', 'U') IS NOT NULL  
+    IF TABLE playlistTrack DOES NOT EXIST;
    DROP TABLE PlaylistTrack;
     
     
 
-IF OBJECT_ID('Album', 'U') IS NOT NULL
+IF TABLE Album DOES NOT EXIST
     DROP TABLE Album;
     
     
     
- IF OBJECT_ID('Artists', 'U') IS NOT NULL
-    DROP TABLE Artists;
+ IF TABLE Artist DOES NOT EXIST
+    DROP TABLE Artist;
 
 
 
@@ -57,16 +57,16 @@ CREATE TABLE "Track"
     CONSTRAINT "PK_Track" PRIMARY KEY  ("TrackId")
 );
 
-CREATE TABLE Artists (
+CREATE TABLE Artist (
   ArtistId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   ArtistName nvarchar(255) NOT NULL,
   ActiveFrom date
 );
-CREATE TABLE Genres (
+CREATE TABLE Genre (
   GenreId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   Genre nvarchar(50) NOT NULL
 );
-CREATE TABLE Albums (
+CREATE TABLE Album (
   AlbumId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   AlbumName nvarchar(255) NOT NULL,
   TimeDate date NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE Albums (
   CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistId)     
     REFERENCES dbo.Artists (ArtistId)     
  
-INSERT INTO Artists (ArtistName, ActiveFrom, Country)
+INSERT INTO Artist (ArtistName, ActiveFrom, Country)
 VALUES 
   ('Abba','1979-1-25', 'Sweeden'),
   ('Jeans','1975-02-11', 'USA'), 
@@ -89,7 +89,7 @@ VALUES
   ('List','1989-07-26', 'Spain')
  
 
-INSERT INTO Genres (Genre)
+INSERT INTO Genre (Genre)
 VALUES 
   ('Alt'),
   ('Rap'), 
@@ -100,7 +100,7 @@ VALUES
   ('Rap'),
   ('Country');
 
-INSERT INTO Albums (AlbumName, TimeDate, ArtistId, GenreId)
+INSERT INTO Album (AlbumName, TimeDate, ArtistId, GenreId)
 VALUES 
   ('Joy', '1987-09-03', 1, 1),
   ('Peace', '1981-05-20', 2, 1), 
@@ -118,16 +118,16 @@ VALUES
 
 
 
-CREATE TABLE Artists (
+CREATE TABLE Artist (
   ArtistId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   ArtistName nvarchar(255) NOT NULL,
   ActiveFrom date
 );
-CREATE TABLE Genres (
+CREATE TABLE Genre (
   GenreId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   Genre nvarchar(50) NOT NULL
 );
-CREATE TABLE Albums (
+CREATE TABLE Album (
   AlbumId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   AlbumName nvarchar(255) NOT NULL,
   TimeDate date NOT NULL,
