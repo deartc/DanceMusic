@@ -37,16 +37,16 @@ CREATE TABLE "Track"
   
 
 
-CREATE TABLE Artists (
+CREATE TABLE Artist (
   ArtistId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   ArtistName nvarchar(255) NOT NULL,
   ActiveFrom date
 );
-CREATE TABLE Genres (
+CREATE TABLE Genre (
   GenreId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   Genre nvarchar(50) NOT NULL
 );
-CREATE TABLE Albums (
+CREATE TABLE Album (
   AlbumId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   AlbumName nvarchar(255) NOT NULL,
   TimeDate date NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE Albums (
   CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistId)     
     REFERENCES dbo.Artists (ArtistId) ;    
     
-ALTER TABLE Albums
+ALTER TABLE Album
 ADD CONSTRAINT FK_Albums_Genres FOREIGN KEY (GenreId)     
 	REFERENCES dbo.Genres (GenreId);
 
