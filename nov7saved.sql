@@ -133,7 +133,7 @@ SET Duration =  600
 WHERE SongID = 1;
  
  
-DELETE dbo.Songs
+DELETE dbo.Song
 WHERE SongID = 1;
  
  
