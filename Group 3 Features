@@ -35,27 +35,27 @@ GO
 /* Design a NONCLUSTERED INDEX with TWO KEY COLUMNS that improves the performance of one of the above queries.
 Design a NONCLUSTERED INDEX with AT LEAST ONE KEY COLUMN and AT LEAST ONE INCLUDED COLUMN that improves the performance of one of the above queries.
 */
-Artists (
+Artist (
     ArtistID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
     ArtistName varchar(100) NOT NULL)
  
-Albums (
+Album (
     AlbumID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
     ArtistID int NOT NULL,
     AlbumName varchar(100) NOT NULL,
-    CONSTRAINT FK_Albums_Artists FOREIGN KEY (ArtistID)
+    CONSTRAINT FK_Album_Artist FOREIGN KEY (ArtistID)
         REFERENCES Artists (ArtistID))
  
-Songs (
+Song (
     SongID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
     AlbumID int NOT NULL,
     SongName varchar(100) NOT NULL,
     NumberOfListens int NOT NULL DEFAULT 0
-    CONSTRAINT FK_Songs_Albums FOREIGN KEY (AlbumID)
-        REFERENCES Albums (AlbumID))
-CREATE UNIQUE INDEX IX_Artists_Name ON Artists (ArtistName)
-CREATE UNIQUE INDEX IX_Albums_Artist_Name ON Albums (ArtistID, AlbumName)
-CREATE UNIQUE INDEX IX_Songs_Album_Name ON Songs (AlbumID, SongName)
+    CONSTRAINT FK_Song_Album FOREIGN KEY (AlbumID)
+        REFERENCES Album (AlbumID))
+CREATE UNIQUE INDEX IX_Artist_Name ON Artist (ArtistName)
+CREATE UNIQUE INDEX IX_Album_Artist_Name ON Album (ArtistID, AlbumName)
+CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
     INCLUDE (NumberOfListens)
     
     
