@@ -1,4 +1,4 @@
-INSERT INTO Artists (ArtistName, ActiveFrom, Country)
+INSERT INTO Artist (ArtistName, ActiveFrom, Country)
 VALUES 
   ('Abba','1979-1-25', 'Sweeden'),
   ('Jeans','1975-02-11', 'USA'), 
@@ -12,7 +12,7 @@ VALUES
   ('List','1989-07-26', 'Spain')
  
 
-INSERT INTO Genres (Genre)
+INSERT INTO Genre (Genre)
 VALUES 
   ('Alt'),
   ('Rap'), 
@@ -23,7 +23,7 @@ VALUES
   ('Rap'),
   ('Country');
 
-INSERT INTO Albums (AlbumName, TimeDate, ArtistId, GenreId)
+INSERT INTO Album (AlbumName, TimeDate, ArtistId, GenreId)
 VALUES 
   ('Joy', '1987-09-03', 1, 1),
   ('Peace', '1981-05-20', 2, 1), 
