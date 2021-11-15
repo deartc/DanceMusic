@@ -47,20 +47,24 @@ DROP TABLE IF EXISTS PlaylistTrack
 
 	
 		
-	--ALBUM
+	--ALBUM --ALBUM
 	CREATE TABLE Album
 	(	AlbumID		int IDENTITY(1,1) PRIMARY KEY
-
-	,	AlbumName	varchar(100)	
-	,	ReleaseDate DateTime  (100)
-	 ,  Artist        varchar(100)
-	,	Label          varchar(100)
-	
+	,	Title		varchar(100)
+	,	MainArtist	int NULL
+	,	FOREIGN KEY (MainArtist) REFERENCES Artist (ArtistID)
+		);
+		
+	--ALBUMTRACK
+	CREATE TABLE AlbumTrack
+	(	AlbumID		int 
+	,	TrackNo		int
 	,	SongID		int
 	,	PRIMARY KEY (AlbumID, TrackNo)
 	,	FOREIGN KEY (AlbumID) REFERENCES Album (AlbumID)
 	,	FOREIGN KEY (SongID) REFERENCES Song (SongID)
 		);
+	
 	
 	--Playlist
 	CREATE TABLE Playlist
