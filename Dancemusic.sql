@@ -184,9 +184,25 @@ END
 
 
 
+-------CRUD 
+Create procedure spAlbumsFromArtist 
+	@ArtistName varchar(255)
+AS
+	SELECT AlbumName, ReleaseDate
+	FROM Album
+		INNER JOIN Artists
+		ON Albums.ArtistId = Artists.ArtistId 
+	WHERE Artists.ArtistName = @ArtistName;
+GO
+ 
+
+
+
 
 
 ----CRUD-REPlace Left Join
+
+Create procedure
 
  join genre using(genreid)
         group by albumid
@@ -197,20 +213,28 @@ END
         join genre using(genreid)
         join album using(albumid)
         join artist using(artistid)
+	
+	
+	Go
 
  
  
 --- crud-Update Album Year
  
-
+Create procedure
  
 -UPDATE ALBUM by subracting a year
-UPDATE Album SET year = year - 1; 
+UPDATE Album SET year = year - 1;
+
+
  
---- Stored Proceures DELETE
+--- Stored   Crud Proceures DELETE
+
+Create procedure
 DELETE FROM Song WHERE songId = 
 '3';
 
+Go
 
 
 
