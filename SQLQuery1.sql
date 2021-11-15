@@ -10,6 +10,23 @@ group by
     ar.name
 order by
     count(*) desc
+    
+    
+    
+    
+    
+    -- title and artist who recorded the song 'Peace'
+	SELECT title, artist
+	FROM album JOIN track
+	ON (album.asin=track.album)
+	WHERE song = 'Peace'
+	
+
+	-- Artist who recorded the song 'Joy'? 
+	SELECT artist
+	FROM album JOIN track
+	ON (album.asin = track.album)
+	WHERE song = 'Joy'
 ;   
 
 
