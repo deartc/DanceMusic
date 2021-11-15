@@ -45,6 +45,13 @@ ALTER TABLE song
   ADD CONSTRAINT fk_album
   FOREIGN KEY (albumid)
   REFERENCES album (albumid);
+  
+  
+  
+  
+  
+  UPDATE music AS m SET albumID = (SELECT albumID FROM albumList AS a WHERE m.songalbum = a.album) WHERE albumID IS NULL
+AND EXISTS (SELECT 1 FROM albumList AS a WHERE m.songalbum = a.album) ;
 
 
 
