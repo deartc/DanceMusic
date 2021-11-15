@@ -51,7 +51,6 @@ Group 2: Updating / Deleting Data from a Database  I used the following one to s
 
   I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
 
-
 UPDATE album
 SET country = 'USA'
 WHERE country= 'Great Britain';
