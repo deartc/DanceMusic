@@ -5,39 +5,16 @@ I used the write a DML statement that UPDATEs a set of rows with a WHERE clause.
 UPDATE album SET country = 'USA' WHERE country= 'Great Britain';
 
 
-/*Group 2: Updating / Deleting Data from a Database if I include students I used the following one to satisfy requiremnts:
 
-I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable. I will use if I include students */
-
-
-UPDATE Students SET
-        LastName='Jones' WHERE
-        StudentID=987654321;
-UPDATE Students SET
-        LastName='Jones', City='Louisville
-        WHERE StudentID=987654321 OR
-        (City='Jeffersonville' AND FirstName='Sam');
-
-
-/*  Unsure if correct.   Write a DML statement that DELETEs rows from a
+/*  Write a DML statement that DELETEs rows from a
 table that another table references. This script will have to also DELETE any records that reference these rows.
 Both of the DELETE statements need to be wrapped in a single TRANSACTION.*/
 
-ALTER TABLE Students
+ALTER TABLE PlaylistTrack
         DROP Row PlaylistID;
 
 
 
 
 
-
-/*I  used these group 2 features: Write a a DML statement that DELETEs a set of rows with a WHERE clause. 
-The values used in the WHERE clause should be a variable.
-
-DELETE FROM Students
-        WHERE LastName='Smith';
-DELETE FROM Students
-        WHERE LastName like '%Smith%';
-        AND FirstName='John';
-DELETE FROM Students;
 
