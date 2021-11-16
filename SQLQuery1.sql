@@ -38,12 +38,19 @@ group by
    ar.name
 order by
    count(*) desc
-limit 1
-	
-	
-	
-	
+limit 1	
 ;   
+  
+/create procedure  inner join
 
+CREATE PROCEDURE spAlbumsFromArtist 
+	@ArtistName varchar(255)
+AS
+	SELECT AlbumName, ReleaseDate
+	FROM Albums
+		INNER JOIN Artists
+		ON Albums.ArtistId = Artists.ArtistId 
+	WHERE Artists.ArtistName = @ArtistName;
+GO
 
 
