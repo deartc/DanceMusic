@@ -24,6 +24,22 @@ CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
     
     
  
+ 
+ 
+ 
+    CREATE NONCLUSTERED INDEX [IndexName] 
+ON [SchemaName].[TableName] ([ColumnName] DESC)
+GO
+
+    
+    
+    
+    
+    
+    
+    
+    
+ 
 
 
 
