@@ -245,7 +245,7 @@ CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
 
 -EXECUTE statements to test out your procedures
 EXECUTE CreateArtist @Name = ‘Sumpter’, @Country = ‘England’
-EXECUTE UpdateArtist @AlbumID = 1, @AlbumNewName = ‘Joy’
+EXECUTE UpdateAlbum @AlbumID = 1, @AlbumNewName = ‘Joy’
 EXECUTE DeleteArtist @SongId = 1
 EXECUTE REadPlaylist @PlaylistID = 1
 
