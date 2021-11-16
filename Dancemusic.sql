@@ -169,8 +169,7 @@ VALUES  ('1','1,' '1,''1')
 
  
 --------  Stored Procedures (CRUD)
-
------CREATE
+----- CRUD (CREATE  PROCEDURE) CreateArtist @Name, @Country 
 create procedure add ArtistID int,  Name varchar(100), Country varchar(100), AccountID int
  
  
@@ -178,13 +177,33 @@ create procedure add ArtistID int,  Name varchar(100), Country varchar(100), Acc
 BEGIN
 INSERT INTO ArtistId (Name, Country, AccountID)
 VALUES 
-  'Sum', 'Britain', '5'); 
+  'Summer', 'Britain', '5'); 
  
 END
 
+EXECUTE CreateArtist @Name = ‘Summer’, @Country = ‘England’
 
 
--------CRUD 
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------CRUD    (READ Procedure) Artist
+
+
+
 Create procedure spAlbumsFromArtist 
 	@ArtistName varchar(255)
 AS
@@ -193,8 +212,18 @@ AS
 		INNER JOIN Artists
 		ON Albums.ArtistId = Artists.ArtistId 
 	WHERE Artists.ArtistName = @ArtistName;
+
+
+
+
+
+EXECUTE UpdateAlbum @AlbumID = 1, @AlbumNewName = ‘Joy’
+
 GO
  
+
+
+
 
 
 
@@ -213,6 +242,13 @@ Create procedure
         join genre using(genreid)
         join album using(albumid)
         join artist using(artistid)
+
+
+
+
+
+
+
 	
 	
 	Go
@@ -223,52 +259,39 @@ Create procedure
  
 Create procedure
  
--UPDATE ALBUM by subracting a year
-UPDATE Album SET year = year - 1;
+-UPDATE Album
+UPDATE Album SET year = year + 1;
 
 
+
+
+
+EXECUTEUpdateAlbum @AlbumID = +1, @AlbNewName = ‘The Beatles’
+
+GO
+
+
+
+
+--- crud-Update Album
  
---- Stored   Crud Proceures DELETE
-
 Create procedure
-DELETE FROM Song WHERE songId = 
-'3';
-
-Go
-
-
-
------INDEXED
-CREATE UNIQUE INDEX IX_Artist_Name ON Artist (ArtistName)
-CREATE UNIQUE INDEX IX_Album_Artist_Name ON Album (ArtistID, AlbumName)
-CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
-
--EXECUTE statements to test out your procedures  These need to be worked on 
-EXECUTE CreateArtist @Name = ‘Sumpter’, @Country = ‘England’
-EXECUTE UpdateAlbum @AlbumID = 1, @AlbumNewName = ‘Joy’
-EXECUTE DeleteArtist @SongId = 1
-EXECUTE REadPlaylist @PlaylistID = 1
-
-
-
-
-
-    
-
-
-
-
-
-
  
+-UPDATE Album
+UPDATE Album SET year = 1;
+
+
+
+
+
+EXECUTEUpdateAlbum @AlbumID = 1, @AlbNewName = ‘Joy’
+
+
+GO
 
 
 
 
 
 
-  
 
-
-
-	
