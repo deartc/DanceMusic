@@ -91,3 +91,17 @@ order by artist, album, trackid;
          join genre using(genreid)
          join artist using(artistid)
 group by artist, album, genre;
+
+
+
+
+
+
+CREATE TABLE "Song"( "id" INTEGER PRIMARY KEY NOT NULL, "name" TEXT );
+CREATE TABLE "Playlist"( "id" INTEGER PRIMARY KEY NOT NULL, "name" TEXT );
+CREATE TABLE "Song_has_Playlist"( "Song_id" INTEGER NOT NULL, 
+"Playlist_id" INTEGER NOT NULL, PRIMARY KEY("Song_id","Playlist_id"),
+CONSTRAINT "fk_Song_has_Playlist_Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
+CONSTRAINT "fk_Song_has_Playlist_Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
+CREATE INDEX "Song_has_Playlist.fk_Song_has_Playlist_Playlist1" ON "Song_has_Playlist"("Playlist_id"); 
+CREATE INDEX "Song_has_Playlist.fk_Song_has_Playlist_Song1" ON "Song_has_Playlist"("Song_id");
