@@ -1,11 +1,13 @@
 
 
-DROP DATABASE IF EXISTS Music
-CREATE DATABASE Music;
  
-USE Music
+
+
+ USE DancingMusic
+
+
  
-GO
+
  
  
  --DROP Tables
@@ -47,11 +49,16 @@ DROP TABLE IF EXISTS PlaylistTrack
 
 	
 		
-	--ALBUM --ALBUM
+	      
+	--ALBUM
 	CREATE TABLE Album
 	(	AlbumID		int IDENTITY(1,1) PRIMARY KEY
-	,	Title		varchar(100)
-	,	MainArtist	int NULL
+	,	AlbumName		varchar(100)
+	,	Label	varchar(100)
+	,   NumberofSongs int
+	,   MainArtist    int
+
+
 	,	FOREIGN KEY (MainArtist) REFERENCES Artist (ArtistID)
 		);
 		
@@ -66,12 +73,13 @@ DROP TABLE IF EXISTS PlaylistTrack
 		);
 	
 	
+	
 	--Playlist
 	CREATE TABLE Playlist
 	(	PlaylistID	int IDENTITY(1,1) PRIMARY KEY
 	,	Title		varchar(100)
 	,	UserID		int NOT NULL
-	,	FOREIGN KEY (UserID) REFERENCES Users(UserID)
+	,	
 		);
 		
            --PLAYLISTTRACK
@@ -104,15 +112,17 @@ Created stored procedures to expose CRUD (Create, Read, Update, and Delete) func
 
 INSERT INTO ALBUM
 (AlbumName, 
-ReleaseDate, 
-Artist,
-Label)
+Label, 
+NumberofSongs,
+MainArtist)         
+
 
 VALUES 
-('Life', '2011','Jeans', 'RCA') 
-('Joy', '2005','Bills', 'ABC')
-('Life', '1994','Jeans', 'CBS') 
-('Soul', '1997','Bills', 'TNT');
+('Life', 'RCA', '10', 'Jean'), 
+('Joy',  'ABC', '8', 'Bob'),
+('Life', 'CBS', '9', 'Jill'), 
+('Soul',  'TNT',
+'8', 'Dean);
 
 
 
@@ -125,8 +135,8 @@ Country,
 AccountID)
 
 VALUES 
- ('Life','Britain', '1') 
-  ('Soul','Sweeden', '2')
+  ('Life','Britain','1'), 
+  ('Soul','Sweeden', '2'),
   ('Peace','Denmark','3');
    
                              
@@ -138,8 +148,8 @@ VALUES
  SongId)
 
  VALUES 
- ('1','2','Chi', '1')
- ('2','3','Pho','2')
+ ('1','2','Chi','1'),
+ ('2','3','Pho','2'),
 ('3','4', 'Cho','4'); 
  
   
@@ -148,43 +158,75 @@ INSERT INTO Playlist
 ArtistId) 
 
 VALUES 
- ('1','1') 
-  ('2','2')
+ ('1','1'), 
+  ('2','2'),
  ('3', '3');
  
  
  INSERT INTO PlaylistTrack 
 (PlaylistID,
 TrackNo,
-SongID, 
-ArtistId)
+SongID)
 
-VALUES  ('1','1,' '1,''1') 
-  ('2','2','2','2')
- ('3', '3', '3','3')
- ('4','4','4','4');
+VALUES  
+('1','1','3'), 
+  ('2','2','2'),
+ ('3', '3','3'),
+ ('4','4','4');
 
 
- 
+ --------  Stored Procedures (CRUD)
+----- CRUD (CREATE  PROCEDURE) CreateArtist @Name, @Country  
+--------
 
- 
---------  Stored Procedures (CRUD)
------ CRUD (CREATE  PROCEDURE) CreateArtist @Name, @Country 
+CREATE PROCEDURE CreateArtist @Name, @Country 
+
+
 create procedure add ArtistID int,  Name varchar(100), Country varchar(100), AccountID int
  
  
  
 BEGIN
 INSERT INTO ArtistId (Name, Country, AccountID)
-VALUES 
+
   'Summer', 'Britain', '5'); 
  
 END
 
-EXECUTE CreateArtist @Name = ‘Summer’, @Country = ‘England’
+EXECUTE CreateArtist @Name = �Dogs�, @Country = �England�
 
 
+GO----------Not working yet-----------------
+
+
+--Create  procedure
+
+
+CREATE PROCEDURE spAlbumFromArtist 
+           @ArtistName varchar(255)
+AS
+           SELECT AlbumName, ReleaseDate
+           FROM Album
+
+
+
+		   _________Indexing-CREATE UNIQUE INDEX IX_Artist_Name ON Artist (ArtistName)
+CREATE UNIQUE INDEX IX_Album_Artist_Name ON Album (ArtistID, AlbumName)
+CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
+
+
+                      INNER JOIN Artists
+                      ON Album.ArtistId = Artist.ArtistId 
+           WHERE Artist.ArtistName = @ArtistName;
 GO
+
+EXECUTE spAlbumFromArtist @ArtistName = "Smiths"
+
+
+
+
+
+
 
 
 
@@ -217,7 +259,7 @@ AS
 
 
 
-EXECUTE UpdateAlbum @AlbumID = 1, @AlbumNewName = ‘Joy’
+EXECUTE UpdateAlbum @AlbumID = 1, @AlbumNewName = Joy
 
 GO
  
@@ -225,35 +267,6 @@ GO
 
 
 
-
-
-
-
-----CRUD-REPlace Left Join
-
-Create procedure
-
- join genre using(genreid)
-        group by albumid
-          having count(distinct genre.name) > 1
-        )
-        as multi_genre_album(albumid, genres) using (albumid)
-
-        join genre using(genreid)
-        join album using(albumid)
-        join artist using(artistid)
-
-
-
-
-
-
-
-	
-	
-	Go
-
- 
  
 --- crud-Update Album Year
  
@@ -266,28 +279,37 @@ UPDATE Album SET year = year + 1;
 
 
 
-EXECUTEUpdateAlbum @AlbumID = +1, @AlbNewName = ‘The Beatles’
+EXECUTEUpdateAlbum @AlbumID = +1, @AlbNewName = The Beatles
 
-GO
-
-
+GO----NOt working_____
 
 
---- crud-Update Album
+
+
+
+----------INdexing-------
+
+CONSTRAINT "fk_PlayList_track _Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
+CONSTRAINT "fk_PlayList_track _Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
+CREATE INDEX "PlayList_track .fk_PlayList_track _Playlist1" ON "PlayList_track "("Playlist_id"); 
+CREATE INDEX "PlayList_track .fk_PlayList_track _Song1" ON "PlayList_track "("Song_id");
+
+
+
+
+---------INdexing--------
+CREATE NONCLUSTERED INDEX IX_AlbumName on Album(AlbumName)
+CREATE NONCLUSTERED INDEX IX_ArtistName on Artist(ArtistName)
+
  
-Create procedure
- 
--UPDATE Album
-UPDATE Album SET year = 1;
 
 
 
 
 
-EXECUTEUpdateAlbum @AlbumID = 1, @AlbNewName = ‘Joy’
 
 
-GO
+
 
 
 
