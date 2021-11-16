@@ -188,6 +188,19 @@ END;
  
  
 ------check to see if i need this
+
+
+CONSTRAINT "fk_PlayList_track _Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
+CONSTRAINT "fk_PlayList_track _Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
+CREATE INDEX "PlayList_track .fk_PlayList_track _Playlist1" ON "PlayList_track "("Playlist_id"); 
+CREATE INDEX "PlayList_track .fk_PlayList_track _Song1" ON "PlayList_track "("Song_id");
+ 
+ 
+
+
+
+
+
  
  
 CREATE UNIQUE INDEX song_index
