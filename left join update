@@ -93,6 +93,27 @@ order by artist, album, trackid;
 group by artist, album, genre;
 
 
+alter  example
+
+ALTER PROCEDURE spAlbumsFromArtist 
+    @ArtistName varchar(255)
+AS
+    SELECT 
+        al.AlbumName, 
+        al.ReleaseDate, 
+        g.Genre
+    FROM Albums al
+        INNER JOIN Artists ar
+        ON al.ArtistId = ar.ArtistId 
+        INNER JOIN Genres g
+        ON g.GenreId = al.GenreId 
+    WHERE ar.ArtistName = @ArtistName;
+GO
+
+
+
+
+
 
 
 
