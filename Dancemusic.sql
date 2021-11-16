@@ -243,7 +243,7 @@ CREATE UNIQUE INDEX IX_Artist_Name ON Artist (ArtistName)
 CREATE UNIQUE INDEX IX_Album_Artist_Name ON Album (ArtistID, AlbumName)
 CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
 
--EXECUTE statements to test out your procedures
+-EXECUTE statements to test out your procedures  These need to be worked on 
 EXECUTE CreateArtist @Name = ‘Sumpter’, @Country = ‘England’
 EXECUTE UpdateAlbum @AlbumID = 1, @AlbumNewName = ‘Joy’
 EXECUTE DeleteArtist @SongId = 1
