@@ -1,9 +1,9 @@
 # DanceMusicProject
-This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences,  and contact information.  Although those are my ultimate goals,  I had to limit my class project due to time constraints and specific class requirements.  I plan on expanding it later after the course ends. I included those tables in future expansion.  
+This is a  project named DanceMusic.  I teach dance exercise classes and  I would like to have better organization for my music collection, student dance preferences,  and contact information.  Although those are my ultimate goals,  I had to limit my class project due to time constraints and specific class requirements.  I plan on expanding it later after the course ends.
 I used Window and SQL Express.   To run my project  it is under DanceMusic.sql.   It may be necessary to add the following code to the start.  
 drop database music;
-CREATE DATABASE IF NOT EXISTS music;
-use music; 
+CREATE DATABASE IF NOT EXISTS dancingMusic;
+use Dancingmusic; 
 
 
 I satsified the requirements by doing the following:
@@ -56,9 +56,6 @@ SET country = 'USA'
 WHERE country= 'Great Britain';
 
 
-I did not use these group 2 features:
-Write a a DML statement that DELETEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
-Write a DML statement that DELETEs rows from a table that another table references. This script will have to also DELETE any records that reference these rows. Both of the DELETE statements need to be wrapped in a single TRANSACTION.
 
 
 Group 3: Optimizing a Database
@@ -69,7 +66,6 @@ I included the following third feature:   Design a NONCLUSTERED INDEX with ONE K
 
 Correct use of Git/Github and commits: I followed the correct steps in the project guidelines to create and name the github repository that would reflect a distinct repository. I then used the proper guidelines to initialize the project and add files using git bash and the command line. I then far exceeded the minimum number of commits needed to pass.
 
-I also named my file a distinct name describing my project of DanceMusic
 
 
 
