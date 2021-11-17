@@ -58,8 +58,67 @@ Write a SELECT query that utilizes a GROUP BY clause along with an aggregate fun
 Write a SELECT query that utilizes a SUBQUERY. Write a SELECT query that utilizes a JOIN, at least 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC) 
 AND A GROUP BY clause with an aggregate function. Write a SELECT query that utilizes a JOIN with 3 or more tables, at 2 OPERATORS (AND, OR, =, IN, BETWEEN, ETC), 
 a GROUP BY clause with an aggregate function, and a HAVING clause. 
-Write a SELECT query that uses a WHERE clause. Write a SELECT query that uses an OR and an AND operator. Write a SELECT query that filters NULL rows using IS NOT NULL.*/
+Write a SELECT query that uses a WHERE clause. Write a SELECT query that uses an OR and an AND operator.
 
+Write a SELECT query that filters NULL rows using IS NOT NULL.*/
+
+
+
+
+/* List the number of songs per artist in descending order*/
+
+select
+    ar.name "Artist Name",
+    count(*) "Number of Songs"
+from
+    song s join album  al on s.album_id = al.id
+    	   join artist ar on al.artist_id = ar.id
+group by
+    ar.name
+order by
+    count(*) desc
+    
+    
+    
+    
+    
+    -- title and artist who recorded the song 'Peace'
+	SELECT title, artist
+	FROM album JOIN track
+	ON (album.asin=track.album)
+	WHERE song = 'Peace'
+	
+
+	-- Artist who recorded the song 'Joy'? 
+	SELECT artist
+	FROM album JOIN track
+	ON (album.asin = track.album)
+	WHERE song = 'Joy'--Which artist or artists have recorded the most number of songs?
+
+select
+   ar.name "Artist Name",
+   count(*) "Number of Songs"
+from
+    song s join album al on s.album_id = al.id
+    	   join artist ar on al.artist_id = ar.id 
+group by
+   ar.name
+order by
+   count(*) desc
+limit 1	
+;   
+  
+/create procedure  inner join
+
+CREATE PROCEDURE spAlbumsFromArtist 
+	@ArtistName varchar(255)
+AS
+	SELECT AlbumName, ReleaseDate
+	FROM Albums
+		INNER JOIN Artists
+		ON Albums.ArtistId = Artists.ArtistId 
+	WHERE Artists.ArtistName = @ArtistName;
+GO
 
 
 
