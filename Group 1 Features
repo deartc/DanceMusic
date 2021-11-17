@@ -122,5 +122,131 @@ GO
 
 
 
+ select genre.name, count(*),
+         sum(count(*)) over () as tracks,
+         round(100.0 * count(*) / sum(count(*)) over(), 2) as pct
+    from           genre
+         left join track using(genreid)
+group by genre.name order by genre.name;
 
 
+
+
+ 
+
+
+
+  
+  
+  
+  
+  select title as album,
+         array_agg(distinct genre.name order by genre.name) as genres
+    from      track
+         join genre using(genreid)
+         join album using (albumid)
+group by title
+  having count(distinct genre.name) > 1;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ select artist.name as artist,
+       album.title as album,
+       track.name as track,
+       row_number()
+         over(partition by albumid
+                  order by trackid)
+         as n,
+       count(genreid)
+         over(partition by albumid, genreid)
+         as same
+
+  from track
+       join
+       (
+          select albumid,
+                 array_agg(distinct genre.name
+                           order by genre.name)
+                   as genres
+            from track
+                 join genre using(genreid)
+        group by albumid
+          having count(distinct genre.name) > 1
+        )
+        as multi_genre_album(albumid, genres) using (albumid)
+
+        join genre using(genreid)
+        join album using(albumid)
+        join artist using(artistid)
+        
+order by artist, album, trackid; 
+  
+  
+  
+ 
+ 
+ with multi_genre_albums(albumid, artistid, title) as
+ (
+    select albumid, artistid, title
+      from      track
+           join genre using(genreid)
+           join album using (albumid)
+  group by albumid, artistid, title
+    having count(distinct genre.name) > 1
+ )
+ 
+ 
+ 
+ 
+ 
+ 
+ select artist.name as artist,
+         title as album,
+         genre.name as genre,
+         array_agg(track.name order by trackid) as tracks
+    from multi_genre_albums
+         join track using(albumid)
+         join genre using(genreid)
+         join artist using(artistid)
+group by artist, album, genre;
+
+
+alter  example
+
+ALTER PROCEDURE spAlbumsFromArtist 
+    @ArtistName varchar(255)
+AS
+    SELECT 
+        al.AlbumName, 
+        al.ReleaseDate, 
+        g.Genre
+    FROM Albums al
+        INNER JOIN Artists ar
+        ON al.ArtistId = ar.ArtistId 
+        INNER JOIN Genres g
+        ON g.GenreId = al.GenreId 
+    WHERE ar.ArtistName = @ArtistName;
+GO
+
+
+
+
+
+
+
+
+
+CREATE TABLE "Song"( "id" INTEGER PRIMARY KEY NOT NULL, "name" TEXT );
+CREATE TABLE "Playlist"( "id" INTEGER PRIMARY KEY NOT NULL, "name" TEXT );
+CREATE TABLE "Song_has_Playlist"( "Song_id" INTEGER NOT NULL, 
+"Playlist_id" INTEGER NOT NULL, PRIMARY KEY("Song_id","Playlist_id"),
+CONSTRAINT "fk_Song_has_Playlist_Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
+CONSTRAINT "fk_Song_has_Playlist_Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
+CREATE INDEX "Song_has_Playlist.fk_Song_has_Playlist_Playlist1" ON "Song_has_Playlist"("Playlist_id"); 
+CREATE INDEX "Song_has_Playlist.fk_Song_has_Playlist_Song1" ON "Song_has_Playlist"("Song_id");
