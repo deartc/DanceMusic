@@ -44,7 +44,7 @@ I included the following third feature:   Design a NONCLUSTERED INDEX with ONE K
 
 
 
-Correct use of Git/Github and commits: I followed the correct steps in the project guidelines to create and name the github repository that would reflect a distinct repository. I then used the proper guidelines to initialize the project and add files using git bash and the command line. I then far exceeded the minimum number of commits needed to pass.
+
 
 
 
