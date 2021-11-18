@@ -91,6 +91,16 @@ DROP TABLE IF EXISTS PlaylistTrack
                 ,               FOREIGN KEY (PlaylistID) REFERENCES Playlist(PlaylistID)
                 ,               FOREIGN KEY (SongID) REFERENCES Song (SongID)
                                 );
+				
+				----------INdexing-------
+CONSTRAINT "fk_PlayList_track _Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
+CONSTRAINT "fk_PlayList_track _Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
+CREATE INDEX "PlayList_track .fk_PlayList_track _Playlist1" ON "PlayList_track "("Playlist_id"); 
+CREATE INDEX "PlayList_track .fk_PlayList_track _Song1" ON "PlayList_track "("Song_id");
+---------INdexing--------
+CREATE NONCLUSTERED INDEX IX_AlbumName on Album(AlbumName)
+CREATE NONCLUSTERED INDEX IX_ArtistName on Artist(ArtistName)
+ ----------------------------------------------------------------------
 
                                 
                 
@@ -193,7 +203,7 @@ INSERT INTO ArtistId (Name, Country, AccountID)
  
 END
 
-EXECUTE CreateArtist @Name = ‘Dogs’, @Country = ‘England’
+EXECUTE CreateArtist @Name = â€˜Dogsâ€™, @Country = â€˜Englandâ€™
 
 
 GO----------Not working yet-----------------
@@ -273,33 +283,39 @@ GO
 Create procedure
  
 -UPDATE Album
-UPDATE Album SET year = year + 1;
+UPDATE Album @AlbumID = 1, @AlbNewName = The Beatles
 
 
 
 
 
-EXECUTEUpdateAlbum @AlbumID = +1, @AlbNewName = The Beatles
-
-GO----NOt working_____
+EXECUTEUpdateAlbum @AlbumID = 1, @AlbNewName = The Beatles
 
 
 
 
 
-----------INdexing-------
-
-CONSTRAINT "fk_PlayList_track _Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
-CONSTRAINT "fk_PlayList_track _Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
-CREATE INDEX "PlayList_track .fk_PlayList_track _Playlist1" ON "PlayList_track "("Playlist_id"); 
-CREATE INDEX "PlayList_track .fk_PlayList_track _Song1" ON "PlayList_track "("Song_id");
+Create procedure
+ 
+-Delete Album
+DELETE Album @AlbumId = 1; @AlbNewName=The Beatles
 
 
 
 
----------INdexing--------
-CREATE NONCLUSTERED INDEX IX_AlbumName on Album(AlbumName)
-CREATE NONCLUSTERED INDEX IX_ArtistName on Artist(ArtistName)
+
+EXECUTEDELETEAlbum @AlbumID = +1, @AlbNewName = The Beatles
+
+GO
+
+
+
+
+
+
+
+
+
 
  
 
