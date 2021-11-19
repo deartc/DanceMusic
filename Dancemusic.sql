@@ -201,17 +201,15 @@ VALUES
  --------  Stored Procedures (CRUD)
 ----- CRUD (CREATE  PROCEDURE) CreateArtist @Name, @Country  
 
-CREATE PROCEDURE CreateArtist @Name, @Country 
-
-
-create procedure add ArtistId int,  Name varchar(100), Country varchar(100)
+CREATE PROCEDURE CreateArtist @Name, @Country(AS ArtistId int,  Name varchar(100), Country varchar(100))
  
  
  
 BEGIN
-INSERT INTO ArtistId (Name, Country, ArtistID)
+     INSERT INTO Artist
+SET Artist = ArtistId, Name = @Name, Country = @Country;
 
-  'Summer', 'Britain', '5'; 
+
  
 END
 
@@ -225,8 +223,9 @@ GO
 
 
 CREATE PROCEDURE spAlbumFromArtist 
+
+BEGIN
            @ArtistName varchar(100)
-AS
            SELECT AlbumName
            FROM Album
 END	   
@@ -240,32 +239,13 @@ GO
 
 
 
-                
-                 
-  
-
--------CRUD    (READ Procedure) Artist
-
-
-Create procedure spAlbumsFromArtist 
-	@ArtistName varchar(100)
-AS
-	SELECT AlbumName, ReleaseDate
-	FROM Album
-		INNER JOIN Artist
-		ON Album.ArtistId = Artist.ArtistId 
-	WHERE Artist.ArtistName = @ArtistName;
-
-
-
-	
-
-
 
 
 ---------CRUD
-CREATE PROCEDURE ReadPlaylist @PlaylistID AS
-ReadPlaylist= 1  @PlaylistID=1  
+CREATE PROCEDURE ReadPlaylist @PlaylistID (AT PlaylistID (INT)) 
+BEGIN Playlist = 1 
+
+SELECT @PlaylistID =1  
 
 END  
 EXECUTE ReadPlaylist @PlaylistID 
@@ -277,7 +257,7 @@ GO
 
 --------CRUD Procedure  Update
 
-CREATE PROCEDURE UpdateArtist @ArtistID, @ArtistNewName AS
+CREATE PROCEDURE UpdateArtist @ArtistID, @ArtistNewName(As ArtistID int))
 
 
 
@@ -289,7 +269,7 @@ BEGIN
 	END
 
 EXECUTE UpdateArtist @AlbumID = 1, @AlbumNewName = The Beatles
-dateArtist @AlbumID = 1, @AlbumNewName = The Beatles
+UpdateArtist @AlbumID = 1, @AlbumNewName = The Beatles
 
 
 GO
@@ -332,6 +312,7 @@ EXECUTE spAlbumFromArtist @ArtistName = "Abba";
 /*Query  - used for Group 1 : 
 Write a SELECT query that uses an OR and an AND operator. . */
 
+Begin
 SELECT artist_id
 FROM artist
 WHERE artist_name =  'Abba'
@@ -342,25 +323,10 @@ WHERE album_name =  'Joy'
 
 SELECT COUNT(*)
 FROM track
-WHERE artist_id=1 AND album_id =1 
+WHERE artist_id=1 AND album_id =1       written but not executed*/
 
+END
 
-
-/* Query - used for Group 1. Write a SELECT query that utilizes a variable in the WHERE clause. Write a SELECT query that utilizes an ORDER BY clause. */
-
-SELECT COUNT( * ) 
-FROM track
-INNER JOIN artist ON artist.artist_id = track.artist_id
-INNER JOIN album ON album.album_id = track.album_id
-WHERE artist.artist_name =  'Abba'
-AND album.album_name =  'Joy'
- 
- 
-/*Group 2: Updating / Deleting Data from a Database I used the following one to satisfy requirements:
-
-I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable. */
-
-UPDATE album SET country = 'USA' WHERE country= 'Great Britain';
 
 
 
