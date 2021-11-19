@@ -5,12 +5,8 @@
 
  USE DancingMusic
 
-
  
-
- 
- 
- --DROP Tables
+ ----DROP Tables
 DROP TABLE IF EXISTS Artist
 DROP TABLE IF EXISTS Song
 DROP TABLE IF EXISTS Album
@@ -18,15 +14,20 @@ DROP DATABASE IF EXISTS AlbumTrack
 DROP TABLE IF EXISTS Playlist
 DROP TABLE IF EXISTS PlaylistTrack
 
- 
+---- DROP Procedures
+DROP PROCEDURE IF EXISTS CreateArtist;
+DROP PROCEDURE IF EXISTS readPlaylist;
+DROP PROCEDURE IF EXISTS updateAlbum;
+DROP PROCEDURE IF EXISTS deleteAlbum;
+DROP PROCEDURE IF EXISTS deleteArtist;
+Drop Procedure  IF EXISTS spAlbumsFromArtist
 
 
 
- 
 	
---CREATE TABLES	
+----CREATE TABLES	
 		
-	-- ARTIST
+	---- ARTIST
 	CREATE TABLE Artist
 	(	ArtistID	int IDENTITY(1,1) PRIMARY KEY
 	,	Name		varchar(100)
@@ -92,30 +93,24 @@ DROP TABLE IF EXISTS PlaylistTrack
                 ,               FOREIGN KEY (SongID) REFERENCES Song (SongID)
                                 );
 
----------INdexing--------
+---------Indexing--------
 ---CREATE NONCLUSTERED INDEX IX_AlbumName on Album(AlbumName)
 ----CREATE NONCLUSTERED INDEX IX_ArtistName on Artist(ArtistName)----------INdexing-------
 
-CONSTRAINT "fk_PlaylistTrack _Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
-CONSTRAINT "fk_PlaylistTrack _Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
+-----CONSTRAINT "fk_PlaylistTrack _Song1" FOREIGN KEY("Song_id") REFERENCES "Song"("id"), 
+------CONSTRAINT "fk_PlaylistTrack _Playlist1" FOREIGN KEY("Playlist_id") REFERENCES "Playlist"("id") );
+
+
+CREATE INDEX SongID_index
+ON PLAYLISTTRACK (SongID);
 
 
 
 
                                 
                 
-      
  
- 
- 
-             
- 
-                                
-        
-                
-               
- 
-/*Insert.*/
+/*Insert Values into Tables*/
  
 
 INSERT INTO ALBUM
@@ -126,7 +121,7 @@ MainArtist)
 
 
 VALUES 
-('Life', 'RCA', '10', 'Jean'), 
+('Abba', 'RCA', '10', 'Jean'), 
 ('Joy',  'ABC', '8', 'Bob'),
 ('Life', 'CBS', '9', 'Jill'), 
 ('Soul',  'TNT',
@@ -143,7 +138,7 @@ Country,
 AccountID)
 
 VALUES 
-  ('Life','Britain','1'), 
+  ('Abba','Britain','1'), 
   ('Soul','Sweeden', '2'),
   ('Peace','Denmark','3');
    
@@ -155,9 +150,9 @@ VALUES
  Duration)
 
  VALUES 
- ('1','Chi','1'),
- ('2','Pho''2'),
-('3','Cho','3'); 
+ ('1','Joy','4'),
+ ('2','Pho''5'),
+('3','Cho','6'); 
  
   
 INSERT INTO Playlist 
@@ -188,35 +183,39 @@ VALUES
 CREATE PROCEDURE CreateArtist @Name, @Country 
 
 
-create procedure add ArtistId int,  Name varchar(100), Country varchar(100), AccountID int
+create procedure add ArtistId int,  Name varchar(100), Country varchar(100)
  
  
  
 BEGIN
-INSERT INTO ArtistId (Name, Country, AccountID)
+INSERT INTO ArtistId (Name, Country, ArtistID)
 
   'Summer', 'Britain', '5'; 
  
 END
 
-EXECUTE CreateArtist @Name = ‘Dogs’, @Country = ‘England’
+EXECUTE CreateArtist @Name = â€˜Sumnerâ€™, @Country = â€˜Britainâ€™
 
 
-GO----------Not working yet-----------------
+GO
 
 
---Create  procedure
+----------CRUD procedure
 
 
 CREATE PROCEDURE spAlbumFromArtist 
-           @ArtistName varchar(255)
+           @ArtistName varchar(100)
 AS
            SELECT AlbumName, ReleaseDate
            FROM Album
+EXECUTE spAlbumFromArtist @ArtistName = "Smiths";
 
 
 
-Stored Procedures (CRUD)
+
+
+
+-----------Stored Procedures (CRUD)
                 ----- CRUD (CREATE  PROCEDURE) CreateArtist @Name, @Country 
                 create procedure add or alter ArtistID int,  Name varchar(100), Country varchar(100), AccountID int
                 
@@ -231,57 +230,11 @@ Stored Procedures (CRUD)
 
 			
                 
-                EXECUTE CreateArtist @Name = 'Summer’, @Country = ‘Britain’
+                EXECUTE CreateArtist @Name = 'Summerâ€™, @Country = â€˜Britainâ€™
+				Go
                 
                  
                 
-
-
-
-
-Stored Procedures (CRUD)
-                ----- CRUD (CREATE  PROCEDURE) CreateArtist @Name, @Country 
-                create procedure add ArtistID int,  Name varchar(100), Country varchar(100), AccountID int
-                
-                
-                 
-                BEGIN
-                INSERT INTO ArtistId (Name, Country, AccountID)
-                VALUES 
-                  'Summer', 'Britain', '5'); 
-                 
-                END
-                
-                EXECUTE CreateArtist @Name = 'Summer’, @Country = ‘England’
-                
-                 
-                GO
-
-
-Create procedure
-
-					 
-INNER JOIN Artist
-                      ON Album.ArtistId = Artist.ArtistId 
-           WHERE Artist.ArtistName = @ArtistName;
-GO
-
-EXECUTE spAlbumFromArtist @ArtistName = "Smiths"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -291,9 +244,8 @@ EXECUTE spAlbumFromArtist @ArtistName = "Smiths"
 -------CRUD    (READ Procedure) Artist
 
 
-
 Create procedure spAlbumsFromArtist 
-	@ArtistName varchar(255)
+	@ArtistName varchar(100)
 AS
 	SELECT AlbumName, ReleaseDate
 	FROM Album
@@ -303,31 +255,131 @@ AS
 
 
 
+	---------CRUD
+	CREATE PROCEDURE READ Artist @Name, @Country 
 
 
-EXECUTE UpdateAlbum @AlbumID = 1, @AlbumNewName = Joy
+create procedure READ ArtistId int,  Name varchar(100), Country varchar(100)
+ 
+ 
+ 
+BEGIN
+INSERT INTO ArtistId (Name, Country, ArtistID)
+
+  'Summer', 'Britain', '5'; 
+ 
+END
+
+EXECUTE READ Artist @Name = â€˜Sumnerâ€™, @Country = â€˜Britainâ€™ ArtistID = '5'
 
 GO
+
+
+---------CRUD
+CREATE PROCEDURE ReadPlaylist @PlaylistID AS
+ReadPlaylist= 1  @PlaylistID=1  
+
+END  
+EXECUTE ReadPlaylist @PlaylistID 
+
+GO
+
+
+
+
+--------CRUD Procedure  Update
+
+CREATE PROCEDURE UpdateArtist @ArtistID, @ArtistNewName AS
+
+
+
+BEGIN
+	UPDATE Artist
+    SET  ArtistID = ArtistOldName
+    WHERE ArtistID = ArtistNewName;
+
+	END
+
+EXECUTE UpdateArtist @AlbumID = 1, @AlbumNewName = The Beatles
+dateArtist @AlbumID = 1, @AlbumNewName = The Beatles
+
+
+GO
+
+
+
+
+
+-------CRUD PROCDURE DELETE
+
+
+CREATE PROCEDURE DeleteArtist @ArtistID AS
+BEGIN
+
+   
+deleteArtist(IN docid INT)
+BEGIN
+	DELETE FROM Artist WHERE ArtistID = @ArtistID;	
+	
+	
+	END
+
+
+
+EXECUTE DeleteArtist @ArtistID = 1
+
+GO
+	
+
+
+----Select Procedure  Query
+
+SELECT AlbumId, AlbumName, ArtistId 
+FROM Albums 
+WHERE ArtistId = 1;
+
+
+
+EXECUTE spAlbumFromArtist @ArtistName = "Abba"; 
+/*Query  - used for Group 1 : 
+Write a SELECT query that uses an OR and an AND operator. . */
+
+SELECT artist_id
+FROM artist
+WHERE artist_name =  'Abba'
+
+SELECT album_id
+FROM album
+WHERE album_name =  'Joy'
+
+SELECT COUNT(*)
+FROM track
+WHERE artist_id=1 AND album_id =1 
+
+
+
+/* Query - used for Group 1. Write a SELECT query that utilizes a variable in the WHERE clause. Write a SELECT query that utilizes an ORDER BY clause. */
+
+SELECT COUNT( * ) 
+FROM track
+INNER JOIN artist ON artist.artist_id = track.artist_id
+INNER JOIN album ON album.album_id = track.album_id
+WHERE artist.artist_name =  'Abba'
+AND album.album_name =  'Joy'
  
-
-
-
-
  
---- crud-Update Album Year
- 
-Create procedure
- 
+/*Group 2: Updating / Deleting Data from a Database I usde the following one to satisfy requiremnts:
 
-UPDATE Album SET year = year + 1;
+I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable. */
 
+UPDATE album SET country = 'USA' WHERE country= 'Great Britain';
 
 
 
 
-EXECUTE UpdateAlbum @AlbumID = +1
-
-GO----NOt working_____
+	   
+	   
+	 
 
 
 
@@ -343,7 +395,37 @@ GO----NOt working_____
 
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
