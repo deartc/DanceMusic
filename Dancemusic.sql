@@ -89,6 +89,7 @@ Drop Procedure  IF EXISTS spAlbumsFromArtist
                 (              PlaylistID              int
                 ,               TrackNo                               int
                 ,               SongID                  int
+		,               Genre                   int
                 ,               PRIMARY KEY (PlaylistID, TrackNo)
                 ,               FOREIGN KEY (PlaylistID) REFERENCES Playlist(PlaylistID)
                 ,               FOREIGN KEY (SongID) REFERENCES Song (SongID)
@@ -127,10 +128,20 @@ VALUES
 ('Joy',  'ABC', '8', 'Bob', '1995-11-02'),
 ('Life', 'CBS', '9', 'Jill', '1994-10-01'), 
 ('Soul',  'TNT',
-'8', 'Dean, '1993-08-05');
+'8', 'Dean', '1993-08-05');
 
 
-
+INSERT INTO AlbumTrack
+	(AlbumID,	 
+	TrackNo,		
+	SongID)
+	
+	('1', '1', '1'),
+	('2', '2', '2'),
+	('3', '3', '3'),
+	('4', '4', '4'),
+	
+	
  
  
  
@@ -142,8 +153,10 @@ AccountID)
 VALUES 
   ('Abba','Britain','1'), 
   ('Soul','Sweeden', '2'),
-  ('Peace','Denmark','3');
-   
+   ('Tyka','Britain','3'), 
+  ('Sweet','Sweeden', '4'),
+
+  
                              
 
  INSERT INTO Song
@@ -154,29 +167,34 @@ VALUES
  VALUES 
  ('1','Joy','4'),
  ('2','Pho''5'),
-('3','Cho','6'); 
+ ('3','Decency','4'),
+ ('4','Tiny''5'),
+
  
   
 INSERT INTO Playlist 
-(SongID, 
-ArtistId) 
+PlaylistID,
+Title,
+UserID,); 
 
 VALUES 
- ('1','1'), 
-  ('2','2'),
- ('3', '3');
+ ('1' 'discos','1'), 
+  ('2','sambas','2'),
+ ('3','tangos', '3'),
+ ('4''waltzes','4');
  
  
  INSERT INTO PlaylistTrack 
 (PlaylistID,
 TrackNo,
-SongID)
+SongID,
+Genre)
 
 VALUES  
-('1','1','3'), 
-  ('2','2','2'),
- ('3', '3','3'),
- ('4','4','4');
+('1','1','1', 'disco'), 
+  ('2','2','2', 'samba'),
+ ('3', '3','3', 'tango'),
+ ('4','4','4,' 'waltz');
 
 
  --------  Stored Procedures (CRUD)
