@@ -116,7 +116,8 @@ ON PLAYLISTTRACK (SongID);
  
 
 INSERT INTO ALBUM
-(AlbumName, 
+(AlbumID
+AlbumName, 
 Label, 
 NumberofSongs,
 MainArtist,
@@ -124,10 +125,10 @@ ReleaseDate)
 
 
 VALUES 
-('Abba', 'RCA', '10', 'Jean', '1996-12-01'), 
-('Joy',  'ABC', '8', 'Bob', '1995-11-02'),
-('Life', 'CBS', '9', 'Jill', '1994-10-01'), 
-('Soul',  'TNT',
+('1', 'Abba', 'RCA', '10', 'Jean', '1996-12-01'), 
+('2', 'Joy',  'ABC', '8', 'Bob', '1995-11-02'),
+('3','Life', 'CBS', '9', 'Jill', '1994-10-01'), 
+('4','Soul',  'TNT',
 '8', 'Dean', '1993-08-05');
 
 
@@ -166,9 +167,9 @@ VALUES
 
  VALUES 
  ('1','Joy','4'),
- ('2','Pho''5'),
+ ('2','Pho','5'),
  ('3','Decency','4'),
- ('4','Tiny''5'),
+ ('4','Tiny','5'),
 
  
   
@@ -220,7 +221,7 @@ EXECUTE CreateArtist @Name = ‘Sumner’, @Country = ‘Britain’
 GO
 
 
-----------CRUD procedure
+----------CRUD procedure  READ
 
 
 CREATE PROCEDURE spAlbumFromArtist 
