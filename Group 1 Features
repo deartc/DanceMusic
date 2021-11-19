@@ -128,13 +128,13 @@ limit 1
 /create procedure  inner join
 
 CREATE PROCEDURE spAlbumsFromArtist 
-	@ArtistName varchar(255)
+	@ArtistName varchar(100)
 AS
 	SELECT AlbumName, ReleaseDate
-	FROM Albums
-		INNER JOIN Artists
-		ON Albums.ArtistId = Artists.ArtistId 
-	WHERE Artists.ArtistName = @ArtistName;
+	FROM Album
+		INNER JOIN Artist
+		ON Album.ArtistId = Artists.ArtistId 
+	WHERE Artist.ArtistName = @ArtistName;
 GO
 
 
