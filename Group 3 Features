@@ -10,9 +10,12 @@ Group 3: Optimizing a Database*/
 CREATE UNIQUE INDEX IX_Artist_Name ON Artist (ArtistName)
 CREATE UNIQUE INDEX IX_Album_Artist_Name ON Album (ArtistID, AlbumName)
 CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
-    INCLUDE (NumberOfListens)
     
-    
+
+                      
+
+
+
     
     
  
