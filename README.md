@@ -63,7 +63,7 @@ WHERE country= 'Great Britain';
 
 Group 3: Optimizing a Database
 
-I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed.
+I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed. lines 105 and 106.  
 
 
 
