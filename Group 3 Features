@@ -7,14 +7,6 @@ Group 3: Optimizing a Database*/
 
 
 
- 
-Song (
-    SongID int NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
-    AlbumID int NOT NULL,
-    SongName varchar(100) NOT NULL,
-    NumberOfListens int NOT NULL DEFAULT 0
-    CONSTRAINT FK_Song_Album FOREIGN KEY (AlbumID)
-        REFERENCES Album (AlbumID))
 CREATE UNIQUE INDEX IX_Artist_Name ON Artist (ArtistName)
 CREATE UNIQUE INDEX IX_Album_Artist_Name ON Album (ArtistID, AlbumName)
 CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
@@ -23,8 +15,6 @@ CREATE UNIQUE INDEX IX_Song_Album_Name ON Song (AlbumID, SongName)
     
     
     
- 
- 
  
  
     CREATE NONCLUSTERED INDEX [IndexName] 
