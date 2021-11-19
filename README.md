@@ -12,14 +12,6 @@ Each table is related to one or more of the other tables via a primary key/forei
 
 
 
-
-
-
-
-
-
-
-The following are included in the git hub section called Insertion to clarify I completed the requirementsL
  I created DML (Data Manipulation Language) to load the tables with sample data.
 I populated these tables with data by manually inserting data.
 
@@ -28,12 +20,11 @@ I populated these tables with data by manually inserting data.
 
 
 
-I Created and called at least 4 stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
+I created and called at least 4 stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
 
 
-
-I included a separate section of my git hub to clarify I completed features from all 3 group
-Chose at least 1 item from each group on the Features List below and implemented them in my stored procedures or DDL script:
+I included a separate folders of my git hub to clarify I completed features from all 3 group
+I chose at least 1 item from each group on the Features List below and implemented them,
 
 
 
