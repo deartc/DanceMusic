@@ -296,13 +296,12 @@ BEGIN
 
 EXECUTE DeleteArtist @ArtistID = 1
 
-GO
-	
+go
 
+------------------------------------------------------------------------------------------------------------------------------------
+/* Select Procedure  Queries written not executed
 
-----Select Procedure  Query 
-
-SELECT AlbumId, AlbumName, ArtistId 
+SELECT AlbumId, AlbumName, ArtistId ---
 FROM Albums 
 WHERE ArtistId = 1;
 
@@ -325,9 +324,8 @@ SELECT COUNT(*)
 FROM track
 WHERE artist_id=1 AND album_id =1       written but not executed*/
 
-END
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
