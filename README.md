@@ -33,9 +33,7 @@ I populated these tables with data by manually inserting data.
 
 
 I created and called at least 4 stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
-
-
----- DROP Procedures
+ Procedures:
  CreateArtist;
  readPlaylist;
  updateAlbum;
