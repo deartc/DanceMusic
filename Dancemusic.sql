@@ -58,6 +58,7 @@ Drop Procedure  IF EXISTS spAlbumsFromArtist
 	,	Label	varchar(100)
 	,   NumberofSongs int
 	,   MainArtist    int
+	,   ReleaseDate datetime
 
 
 	,	FOREIGN KEY (MainArtist) REFERENCES Artist (ArtistID)
@@ -117,15 +118,16 @@ INSERT INTO ALBUM
 (AlbumName, 
 Label, 
 NumberofSongs,
-MainArtist)         
+MainArtist,
+ReleaseDate)
 
 
 VALUES 
-('Abba', 'RCA', '10', 'Jean'), 
-('Joy',  'ABC', '8', 'Bob'),
-('Life', 'CBS', '9', 'Jill'), 
+('Abba', 'RCA', '10', 'Jean', '1996-12-01'), 
+('Joy',  'ABC', '8', 'Bob', '1995-11-02'),
+('Life', 'CBS', '9', 'Jill', '1994-10-01'), 
 ('Soul',  'TNT',
-'8', 'Dean);
+'8', 'Dean, '1993-08-05');
 
 
 
