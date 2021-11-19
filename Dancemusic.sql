@@ -10,7 +10,7 @@
 DROP TABLE IF EXISTS Artist
 DROP TABLE IF EXISTS Song
 DROP TABLE IF EXISTS Album
-DROP DATABASE IF EXISTS AlbumTrack
+DROP TABLE IF EXISTS AlbumTrack
 DROP TABLE IF EXISTS Playlist
 DROP TABLE IF EXISTS PlaylistTrack
 
@@ -167,7 +167,7 @@ VALUES
 
  VALUES 
  ('1','Joy','4'),
- ('2','Pho','5'),
+ ('2','Peace','5'),
  ('3','Decency','4'),
  ('4','Tiny','5'),
 
@@ -227,40 +227,22 @@ GO
 CREATE PROCEDURE spAlbumFromArtist 
            @ArtistName varchar(100)
 AS
-           SELECT AlbumName, ReleaseDate
+           SELECT AlbumName
            FROM Album
-EXECUTE spAlbumFromArtist @ArtistName = "Smiths";
+END	   
+	   
+	   
+	   
+EXECUTE spAlbumFromArtist @ArtistName = "Abba";
+
+GO
 
 
 
 
-
-
------------Stored Procedures (CRUD)
-                ----- CRUD (CREATE  PROCEDURE) CreateArtist @Name, @Country 
-                create procedure add or alter ArtistID int,  Name varchar(100), Country varchar(100), AccountID int
-                
-                
-                 
-                BEGIN
-                INSERT INTO ArtistId (Name, Country, AccountID)
-                VALUES 
-                  'Summer', 'Britain', '5'; 
-                 
-                END
-
-			
-                
-                EXECUTE CreateArtist @Name = 'Summer’, @Country = ‘Britain’
-				Go
                 
                  
-                
-
-
-
-
-
+  
 
 -------CRUD    (READ Procedure) Artist
 
@@ -276,24 +258,9 @@ AS
 
 
 
-	---------CRUD
-	CREATE PROCEDURE READ Artist @Name, @Country 
+	
 
 
-create procedure READ ArtistId int,  Name varchar(100), Country varchar(100)
- 
- 
- 
-BEGIN
-INSERT INTO ArtistId (Name, Country, ArtistID)
-
-  'Summer', 'Britain', '5'; 
- 
-END
-
-EXECUTE READ Artist @Name = ‘Sumner’, @Country = ‘Britain’ ArtistID = '5'
-
-GO
 
 
 ---------CRUD
@@ -338,7 +305,7 @@ CREATE PROCEDURE DeleteArtist @ArtistID AS
 BEGIN
 
    
-deleteArtist(IN docid INT)
+deleteArtist(ArtistID INT)
 BEGIN
 	DELETE FROM Artist WHERE ArtistID = @ArtistID;	
 	
@@ -353,7 +320,7 @@ GO
 	
 
 
-----Select Procedure  Query
+----Select Procedure  Query 
 
 SELECT AlbumId, AlbumName, ArtistId 
 FROM Albums 
@@ -389,7 +356,7 @@ WHERE artist.artist_name =  'Abba'
 AND album.album_name =  'Joy'
  
  
-/*Group 2: Updating / Deleting Data from a Database I usde the following one to satisfy requiremnts:
+/*Group 2: Updating / Deleting Data from a Database I used the following one to satisfy requirements:
 
 I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable. */
 
