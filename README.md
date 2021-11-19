@@ -43,7 +43,7 @@ Write a  SELECT query that utilizes a JOIN.
 
 
 
-Group 2: Updating / Deleting Data from a Database  I used the following one to satisfy requiremnts:
+Group 2: Updating / Deleting Data from a Database  I used the following one to satisfy requirements:
 
   I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
 
@@ -63,7 +63,7 @@ WHERE country= 'Great Britain';
 
 Group 3: Optimizing a Database
 
-I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed. lines 105 and 106.  
+I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed lines on 105 and 106.  
 
 
 
