@@ -6,9 +6,21 @@ CREATE DATABASE IF NOT EXISTS DancingMusic;
 use Dancingmusic; 
 
 
+
+
+
+
+
 I satsified the requirements by doing the following:
   I  created a relational database schema with a minimum of 3 tables. At least 2 of the tables  contain 4 or more columns. Two of the tables  have a many-to-many relationship.  Two of the tables  have a one-to-many relationship.The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR
 Each table is related to one or more of the other tables via a primary key/foreign key relationship.
+
+TABLE  Artist
+TABLE  Song
+TABLE Album
+TABLE AlbumTrack
+TABLE  Playlist
+ TABLE  PlaylistTrack
 
 
 
@@ -23,6 +35,14 @@ I populated these tables with data by manually inserting data.
 I created and called at least 4 stored procedures to expose CRUD (Create, Read, Update, and Delete) functionality.
 
 
+---- DROP Procedures
+ CreateArtist;
+ readPlaylist;
+ updateAlbum;
+ deleteAlbum
+ deleteArtist;
+
+
 I included a separate folders of my git hub to clarify I completed features from all 3 group
 I chose at least 1 item from each group on the Features List below and implemented them,
 
@@ -30,8 +50,7 @@ I chose at least 1 item from each group on the Features List below and implement
 
 
 
-Group 1 Used: Reading Data from a Database
-Write a  SELECT query that utilizes a JOIN.
+Group 1 Used: Reading Data from a Database,  I put the ones used in Group Folde 1
 
 
 
@@ -43,19 +62,9 @@ Write a  SELECT query that utilizes a JOIN.
 
 
 
-Group 2: Updating / Deleting Data from a Database  I used the following one to satisfy requirements:
+Group 2: Updating / Deleting Data from a Database  I put these in Group Folder 2
 
-  I used the write a DML statement that UPDATEs a set of rows with a WHERE clause. The values used in the WHERE clause should be a variable.
-
-UPDATE album
-SET country = 'USA'
-WHERE country= 'Great Britain';
-
-
-
-
-
-
+  I
 
 
 
@@ -63,7 +72,7 @@ WHERE country= 'Great Britain';
 
 Group 3: Optimizing a Database
 
-I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed lines on 105 and 106.  
+I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed lines on 105 and 106. and Group Folder 3  
 
 
 
