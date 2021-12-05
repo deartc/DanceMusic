@@ -48,7 +48,8 @@ I chose at least 1 item from each group on the Features List below and implement
 
 
 
-Group 1 Used: Reading Data from a Database,  I put the ones used in Group Folde 1
+Group 1 Used: Reading Data from a Database, 
+ I put the ones used in Group Folder 1
 
 
 
@@ -62,7 +63,7 @@ Group 1 Used: Reading Data from a Database,  I put the ones used in Group Folde 
 
 Group 2: Updating / Deleting Data from a Database  I put these in Group Folder 2
 
-  I
+  
 
 
 
@@ -70,7 +71,8 @@ Group 2: Updating / Deleting Data from a Database  I put these in Group Folder 2
 
 Group 3: Optimizing a Database
 
-I included the following third feature:   Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed lines on 105 and 106. and Group Folder 3  
+I included the following third feature:  
+ Design a NONCLUSTERED INDEX with ONE KEY COLUMN that improves the performance of one of the above queries.  It is listed under indexed lines on 105 and 106. and Group Folder 3  
 
 
 
