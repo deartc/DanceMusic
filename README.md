@@ -1,5 +1,5 @@
 # DanceMusicProject
- DanceMusic is a project to have better organization for my music collection, student dance preferences,  and contact information.  Although those are my ultimate goals,  I had to limit my  project due to time constraints and specific class requirements.  I plan on expanding it later.
+ DanceMusic is a SQL project to have better organization for my music collection, student dance preferences,  and contact information. 
 I used Window and SQL Express.   To run my project  it is under DanceMusic.sql.   It may be necessary to add the following code to the start.  
 drop database  DancingMusic;
 CREATE DATABASE IF NOT EXISTS DancingMusic;
