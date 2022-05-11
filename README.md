@@ -5,7 +5,7 @@ drop database  DancingMusic;
 CREATE DATABASE IF NOT EXISTS DancingMusic;
 use Dancingmusic; 
 
- I  created a relational database schema with a minimum of 3 tables. At least 2 of the tables  contain 4 or more columns. Two of the tables  have a many-to-many relationship.  Two of the tables  have a one-to-many relationship.The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR
+ Created a relational database schema with a minimum of 3 tables. At least 2 of the tables  contain 4 or more columns. Two of the tables  have a many-to-many relationship.  Two of the tables  have a one-to-many relationship.The following data types are present somewhere in the table definitions: DATETIME, INT, VARCHAR
 Each table is related to one or more of the other tables via a primary key/foreign key relationship.
 
 TABLE  Artist
@@ -16,8 +16,8 @@ TABLE  Playlist
  TABLE  PlaylistTrack
 
 
- I created DML (Data Manipulation Language) to load the tables with sample data.
-I populated these tables with data by manually inserting data.
+ Created DML (Data Manipulation Language) to load the tables with sample data.
+Populated these tables with data by manually inserting data.
 
 
 
