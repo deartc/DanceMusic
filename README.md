@@ -31,6 +31,8 @@ I created and called at least 4 stored procedures to expose CRUD (Create, Read, 
  updateAlbum;
  deleteAlbum
  deleteArtist;
+ 
+ 
 
 
 I included a separate folders of my git hub to clarify I completed features from all 3 group
